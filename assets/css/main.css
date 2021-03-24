@@ -4243,3 +4243,8 @@ input, select, textarea {
 			.imputCA:hover{
 				border: 1px solid #2AA2DA;
 			}
+			#one{    background-attachment: fixed;
+				background-image: url(../../images/wallpapers/337656-PB13VV-324.jpg);
+				background-position: top right;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;}
