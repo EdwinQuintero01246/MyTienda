@@ -394,7 +394,7 @@ textarea.input100 {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background: #6675df;
+  background: #5E42A6;
 
   font-family: Montserrat-Bold;
   font-size: 12px;
@@ -410,7 +410,7 @@ textarea.input100 {
 }
 
 .contact100-form-btn:hover {
-  background: #404b46;
+  background: #312450;
 }
 
 
@@ -655,3 +655,36 @@ textarea.input100 {
 .wrap-input100 .dropDownSelect2 .select2-dropdown {
   width: calc(100% + 2px) !important;
 }
+.scrolly{
+  -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: border-color 0.2s ease;
+    -webkit-transition: border-color 0.2s ease;
+    -ms-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+    background-color: #5E42A6;
+    border: solid 1px !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 3em;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: bold;
+    height: calc(4.75em + 2px);
+    letter-spacing: 0.25em;
+    line-height: 4.75em;
+    outline: 0;
+    padding: 0 3.75em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.scrolly:hover{
+  background-color: #312450;
+}
+#Color-Check{background-color: #5E42A6;border-color: #5E42A6;}
+.Color-Check:hover{background-color: #312450;border-color: #312450;}
