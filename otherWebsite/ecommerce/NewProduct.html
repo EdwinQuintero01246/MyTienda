@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MyTienda New Product</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Top bar Start -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        mytiendat@developer.com 
+                        <i class="fa fa-user"></i>
+                        Edwin Quintero
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +504-9900-0000
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+        
+        <!-- Nav Bar Start -->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="index.html" class="nav-item nav-link">Inicio</a>
+                            <a href="product-list.html" class="nav-item nav-link">Productos</a>
+                            <a href="product-detail.html" class="nav-item nav-link active">Producto Detalles</a>
+                            <a href="cart.html" class="nav-item nav-link">Carrito</a>
+                            <a href="checkout.html" class="nav-item nav-link">Pagos</a>
+                            <a href="my-account.html" class="nav-item nav-link">Mi Cuenta</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Más</a>
+                                <div class="dropdown-menu">
+                                    <a href="wishlist.html" class="dropdown-item">Lista de deseos</a>
+                                    <a href="login.html" class="dropdown-item">Login & Registar</a>
+                                    <a href="contact.html" class="dropdown-item">Contactanos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Registar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->      
+        
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo1.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Buscar">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="wishlist.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="cart.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End --> 
+        
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="product-list.html">Productos</a></li>
+                    <li class="breadcrumb-item active">Nuevo Producto</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        <!--Button direccionales-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 row" style="padding-right: 0px;">
+                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="product-detail.html" tabindex="-1"><i class="fa fa-outdent"></i> Detalles Productos</a>
+                    </div>
+                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="stocktaking.html" tabindex="-1"><i class="fa fa-list"></i> Ver Intentario</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" style="padding-right: 0px;margin-left: 12px;">
+                    <div class="product-price col-md-8 col-sm-8 col-lg-6 col-xl-6" style=" margin-left: auto; padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="#" tabindex="-1"><i class="fa fa-upload"></i> Subir Productos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Button direccionales fin-->
+        
+        
+
+
+
+        <!-- Producto Detalles Start -->
+        <div class="product-detail">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="Contect-NewProd">
+                            <h4>Visualización del producto</h4>
+                        </div>
+                        <div class="product-detail-top">
+                            <div class="row align-items-center">
+                                <div class="col-md-5">
+                                    <div class="product-slider-single normal-slider">
+                                        <img src="img/product-1.jpg" alt="Product Image">
+                                        <img src="img/product-3.jpg" alt="Product Image">
+                                        <img src="img/product-5.jpg" alt="Product Image">
+                                        <img src="img/product-7.jpg" alt="Product Image">
+                                        <img src="img/product-9.jpg" alt="Product Image">
+                                        <img src="img/product-10.jpg" alt="Product Image">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="product-content">
+                                        <div class="title"><h2>Product Name</h2></div>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="price">
+                                            <h4>Precio:</h4>
+                                            <p>$99 <span>$149</span></p>
+                                        </div>
+                                        <div class="quantity">
+                                            <h4>Cantidad:</h4>
+                                            <div class="qty">
+                                                <button disabled class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                <input disabled type="text" value="1">
+                                                <button disabled class="btn-plus"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>Size:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn">S</button>
+                                                <button type="button" class="btn">M</button>
+                                                <button type="button" class="btn">L</button>
+                                                <button type="button" class="btn">XL</button>
+                                            </div> 
+                                        </div>
+                                        <div class="p-color">
+                                            <h4>Color:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn">White</button>
+                                                <button type="button" class="btn">Black</button>
+                                                <button type="button" class="btn">Blue</button>
+                                            </div> 
+                                        </div>
+                                        <div class="action">
+                                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to Carrito</a>
+                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row product-detail-bottom">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#description">Description</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#specification">Specification</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="description" class="container tab-pane active">
+                                        <h4>Product description</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo. 
+                                        </p>
+                                    </div>
+                                    <div id="specification" class="container tab-pane fade">
+                                        <h4>Product specification</h4>
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet</li>
+                                            <li>Lorem ipsum dolor sit amet</li>
+                                            <li>Lorem ipsum dolor sit amet</li>
+                                            <li>Lorem ipsum dolor sit amet</li>
+                                            <li>Lorem ipsum dolor sit amet</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Side Bar Start -->
+                    
+                    <div class="col-lg-4 sidebar">
+                        <div class="Contect-NewProd">
+                            <h4>Nuevo Articulo formulario</h4>
+                        </div>
+                        <div class="row" style=" background-color: white; padding-top: 12px; margin-left: 0px; margin-right: 0px;">
+                            <div class="col-md-12">
+                                <label>Nombre Producto</label>
+                                <input class="form-control" type="text" placeholder="Nombre Producto">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Descuento</label>
+                                <input class="form-control" type="number" placeholder="Precio">
+                            </div>
+                            <!--active descuento-->
+                            <div class="col-md-6">
+                                <label>Descuento</label>
+                                <input class="form-control" type="number" placeholder="Descuento">
+                            </div>
+                            <!--active descuento fin-->
+                            <div class="col-md-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="discount">
+                                    <label class="custom-control-label" for="discount">Aplicar Descuento</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="Info-xtra">
+                                    <label class="custom-control-label" for="Info-xtra">Inf. Extra</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Cantidad</label>
+                                <input class="form-control" type="number" placeholder="Cantidad">
+                            </div>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Categorias</option>
+                                <option value="1">Hogar & Cocina</option>
+                                <option value="2">Moda & Belleza</option>
+                                <option value="3">Ropa De Niños &  bebé</option>
+                                <option value="4">Ropa De Mujer & Hombre</option>
+                                <option value="5">Gadgets & Accesorios</option>
+                                <option value="6">Electronica & Accesorios</option>
+                                <option value="7">Deportes</option>
+                                <option value="8">Autos & Accesorios</option>
+                                <option value="9">Juguetes & Juegos</option>
+                                <option value="10">Libros</option>
+                            </select>
+                            <div class="product-content" style="padding: 0px 12px 0px 12px;">
+                                <div class="p-size">
+                                    <h4>Talla:</h4>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" id="btn-size-Unica" class="btn">Unica</button>
+                                        <button type="button" id="btn-size-Pequeña" class="btn">Pequeña</button>
+                                        <button type="button" id="btn-size-Mediana" class="btn">Mediana</button>
+                                        <button type="button" id="btn-size-Grande" class="btn">Grande</button>
+                                        <button type="button" id="btn-size-Extra" class="btn">Extra</button>
+                                        <button type="button" id="btn-size-Ninguna" class="btn">Ninguna</button>
+                                    </div> 
+                                </div>
+                                <div class="p-size">
+                                    <h4>Color:</h4><br>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" id="btn-Color-Blanco" class="btn col-md-4">Blanco</button>
+                                        <button type="button" id="btn-Color-Negro" class="btn col-md-4">Negro</button>
+                                        <button type="button" id="btn-Color-Azul" class="btn col-md-4">Azul</button>
+                                        <button type="button" id="btn-Color-Rojo" class="btn col-md-4">Rojo</button>
+                                    </div> 
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" id="btn-Color-Amarillo" class="btn col-md-4">Amarillo</button>
+                                        <button type="button" id="btn-Color-Verde" class="btn col-md-4">Verde</button>
+                                        <button type="button" id="btn-Color-Rosado" class="btn col-md-4">Rosado</button>
+                                        <button type="button" id="btn-Color-Naranja" class="btn col-md-4">Naranja</button>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="input-group mb-3" style=" margin-left: 12px; margin-right: 12px; ">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Subir</span>
+                                </div>
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                  <label class="custom-file-label" for="inputGroupFile01">Elija el archivo</label>
+                                </div>
+                              </div>
+                            <!--active Informacion extra-->
+                            <div class="col-sm-12">
+                                <h4>Información Extra</h4>
+                            </div>
+                            <div class="col-sm-12">
+                                <textarea class="textareas" placeholder="Description"></textarea>
+                            </div> 
+                            <div class="col-sm-12">
+                                <h4>Especificación</h4>
+                            </div>
+                            <div class="col-sm-12">
+                                <textarea class="textareas" placeholder="Especificación"></textarea>
+                            </div>
+                            <!--active Informacion extra fin-->
+                        </div>
+                    </div>
+                    <!-- Side Bar End -->
+                </div>
+            </div>
+        </div>
+        <!-- Producto Detalles End -->
+        
+        <!-- Brand Start -->
+        <div class="brand">
+            <div class="container-fluid">
+                <div class="brand-slider">
+                    <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Brand End -->
+        
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Ponerse en contacto</h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>Altos del Trapiche, Honduras</p>
+                                <p><i class="fa fa-envelope"></i>Mytienda@Ofinas.com</p>
+                                <p><i class="fa fa-phone"></i>+504-9900-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Síganos</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Información de la companía</h2>
+                            <ul>
+                                <li><a href="#">Sobre nosotros</a></li>
+                                <li><a href="#">Política de privacidad</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Información de compra</h2>
+                            <ul>
+                                <li><a href="#">Política de pago</a></li>
+                                <li><a href="#">Politica de envios</a></li>
+                                <li><a href="#">Política de devoluciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>Aceptamos:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 copyright">
+                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    </div>
+
+                    <div class="col-md-6 template-by">
+                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->       
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -30,7 +30,9 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <i class="fa fa-envelope"></i>
-                        mytiendat@developer.com
+                        mytiendat@developer.com 
+                        <i class="fa fa-user"></i>
+                        Edwin Quintero
                     </div>
                     <div class="col-sm-6">
                         <i class="fa fa-phone-alt"></i>
@@ -120,14 +122,22 @@
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="#">Productos</a></li>
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="product-list.html">Productos</a></li>
                     <li class="breadcrumb-item active">lista de productos</li>
                 </ul>
             </div>
         </div>
         <!-- Breadcrumb End -->
-        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="" tabindex="-1"><i class="fa fa-upload"></i> Nuevo Producto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- lista de productos Start -->
         <div class="product-view">
             <div class="container-fluid">
@@ -137,9 +147,22 @@
                             <div class="col-md-12">
                                 <div class="product-view-top">
                                     <div class="row">
+                                        <div class="col-md-12 row">
+                                            <div class="product-short col-md-6">
+                                                <div class="dropdown">
+                                                    <div class="dropdown-toggle" data-toggle="dropdown" style=" margin-bottom: 12px; ">Vendedores seguidos</div>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="#" class="dropdown-item">Pedro Perez</a>
+                                                        <a href="#" class="dropdown-item">Diunsa HN</a>
+                                                        <a href="#" class="dropdown-item">Juan Carlos</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="product-search">
-                                                <input type="email" value="Search">
+                                                <input type="text" value="Buscar Empresa Y/O Vendedor">
                                                 <button><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>
