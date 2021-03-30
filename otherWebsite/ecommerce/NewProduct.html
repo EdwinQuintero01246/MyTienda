@@ -28,7 +28,7 @@
         <div class="top-bar">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" id="GeneUserArriba">
                         <i class="fa fa-envelope"></i>
                         mytiendat@developer.com 
                         <i class="fa fa-user"></i>
@@ -75,6 +75,7 @@
                                 <div class="dropdown-menu">
                                     <a href="#" class="dropdown-item">Login</a>
                                     <a href="#" class="dropdown-item">Registar</a>
+                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +176,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="product-content">
-                                        <div class="title"><h2>Product Name</h2></div>
+                                        <div class="title"><h2 id="NombreProducto">Product Name</h2></div>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -184,37 +185,40 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="price">
-                                            <h4>Precio:</h4>
-                                            <p>$99 <span>$149</span></p>
+                                            <h4 >Precio:</h4>
+                                            <p id="PrecioProducto">$99 <span id="DescuentoProducto">$149</span></p>
                                         </div>
                                         <div class="quantity">
                                             <h4>Cantidad:</h4>
                                             <div class="qty">
                                                 <button disabled class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input disabled type="text" value="1">
+                                                <input disabled type="text" id="CantidadProducto" value="1">
                                                 <button disabled class="btn-plus"><i class="fa fa-plus"></i></button>
                                             </div>
                                         </div>
                                         <div class="p-size">
                                             <h4>Size:</h4>
-                                            <div class="btn-group btn-group-sm">
-                                                <button type="button" class="btn">S</button>
-                                                <button type="button" class="btn">M</button>
-                                                <button type="button" class="btn">L</button>
-                                                <button type="button" class="btn">XL</button>
+                                            <div class="btn-group btn-group-sm" id="AddTalla">
                                             </div> 
                                         </div>
                                         <div class="p-color">
                                             <h4>Color:</h4>
-                                            <div class="btn-group btn-group-sm">
-                                                <button type="button" class="btn">White</button>
+                                            <div class="btn-group btn-group-sm" id="AddColor">
+                                                <!--
+                                                 button type="button" class="btn">White</button>
                                                 <button type="button" class="btn">Black</button>
                                                 <button type="button" class="btn">Blue</button>
+                                                <button type="button" class="btn">Red</button>
+                                                <button type="button" class="btn">Yellow</button>
+                                                <button type="button" class="btn">Green</button>
+                                                <button type="button" class="btn">Pink</button>
+                                                <button type="button" class="btn">Purple</button
+                                                -->
                                             </div> 
                                         </div>
                                         <div class="action">
                                             <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to Carrito</a>
-                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a>
+                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Comprar ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -225,28 +229,30 @@
                             <div class="col-lg-12">
                                 <ul class="nav nav-pills nav-justified">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="pill" href="#description">Description</a>
+                                        <a class="nav-link active" data-toggle="pill" href="#description">Descripción</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#specification">Specification</a>
+                                        <a class="nav-link" data-toggle="pill" href="#specification">Especificación</a>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content">
                                     <div id="description" class="container tab-pane active">
-                                        <h4>Product description</h4>
-                                        <p>
+                                        <h4>Descripción Del Producto</h4>
+                                        <p id="DescripciónProducto">
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo. 
                                         </p>
                                     </div>
                                     <div id="specification" class="container tab-pane fade">
-                                        <h4>Product specification</h4>
-                                        <ul>
+                                        <h4>Especificación Del Producto</h4>
+                                        <ul id="SpecificProduct">
+                                            <!--
                                             <li>Lorem ipsum dolor sit amet</li>
                                             <li>Lorem ipsum dolor sit amet</li>
                                             <li>Lorem ipsum dolor sit amet</li>
                                             <li>Lorem ipsum dolor sit amet</li>
                                             <li>Lorem ipsum dolor sit amet</li>
+                                            -->
                                         </ul>
                                     </div>
                                 </div>
@@ -264,21 +270,21 @@
                         <div class="row" style=" background-color: white; padding-top: 12px; margin-left: 0px; margin-right: 0px;">
                             <div class="col-md-12">
                                 <label>Nombre Producto</label>
-                                <input class="form-control" type="text" placeholder="Nombre Producto">
+                                <input id="NameProduct" onchange="CambioDatosNewProduct()" class="form-control" type="text" placeholder="Nombre Producto">
                             </div>
                             <div class="col-md-6">
-                                <label>Descuento</label>
-                                <input class="form-control" type="number" placeholder="Precio">
+                                <label>Precio</label>
+                                <input class="form-control" onchange="CambioDatosNewProduct()" type="number" id="PriceProduct" placeholder="Precio">
                             </div>
                             <!--active descuento-->
-                            <div class="col-md-6">
-                                <label>Descuento</label>
-                                <input class="form-control" type="number" placeholder="Descuento">
+                            <div class="col-md-6" id="DLInput">
+                                <label>Precio Anterior</label>
+                                <input id="DesProduct" disabled class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Descuento">
                             </div>
                             <!--active descuento fin-->
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="discount">
+                                    <input type="checkbox" class="custom-control-input" id="discount" >
                                     <label class="custom-control-label" for="discount">Aplicar Descuento</label>
                                 </div>
                             </div>
@@ -290,9 +296,9 @@
                             </div>
                             <div class="col-md-6">
                                 <label>Cantidad</label>
-                                <input class="form-control" type="number" placeholder="Cantidad">
+                                <input id="QuantityProduct" class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Cantidad">
                             </div>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" id="CategoryProduct" aria-label="Default select example">
                                 <option selected>Categorias</option>
                                 <option value="1">Hogar & Cocina</option>
                                 <option value="2">Moda & Belleza</option>
@@ -309,27 +315,31 @@
                                 <div class="p-size">
                                     <h4>Talla:</h4>
                                     <div class="btn-group btn-group-sm">
-                                        <button type="button" id="btn-size-Unica" class="btn">Unica</button>
-                                        <button type="button" id="btn-size-Pequeña" class="btn">Pequeña</button>
-                                        <button type="button" id="btn-size-Mediana" class="btn">Mediana</button>
-                                        <button type="button" id="btn-size-Grande" class="btn">Grande</button>
-                                        <button type="button" id="btn-size-Extra" class="btn">Extra</button>
-                                        <button type="button" id="btn-size-Ninguna" class="btn">Ninguna</button>
+                                        <button type="button" onclick="ProductSize(1)" id="btn-size-Unica" class="btn">Unica</button>
+                                        <button type="button" onclick="ProductSize(2)" id="btn-size-Pequeña" class="btn">Pequeña</button>
+                                        <button type="button" onclick="ProductSize(3)" id="btn-size-Mediana" class="btn">Mediana</button>
+                                        <button type="button" onclick="ProductSize(4)" id="btn-size-Grande" class="btn">Grande</button>
+                                        <button type="button" onclick="ProductSize(5)" id="btn-size-Extra" class="btn">Extra</button>
+                                        <button type="button" onclick="ProductSize(6)" id="btn-size-Ninguna" class="btn">Ninguna</button>
                                     </div> 
                                 </div>
                                 <div class="p-size">
                                     <h4>Color:</h4><br>
                                     <div class="btn-group btn-group-sm">
-                                        <button type="button" id="btn-Color-Blanco" class="btn col-md-4">Blanco</button>
-                                        <button type="button" id="btn-Color-Negro" class="btn col-md-4">Negro</button>
-                                        <button type="button" id="btn-Color-Azul" class="btn col-md-4">Azul</button>
-                                        <button type="button" id="btn-Color-Rojo" class="btn col-md-4">Rojo</button>
+                                        <button type="button" onclick="ProductColor(1)" id="btn-Color-Blanco" class="btn col-md-4">Blanco</button>
+                                        <button type="button" onclick="ProductColor(2)" id="btn-Color-Negro" class="btn col-md-4">Negro</button>
+                                        <button type="button" onclick="ProductColor(3)" id="btn-Color-Azul" class="btn col-md-4">Azul</button>
+                                        <button type="button" onclick="ProductColor(4)" id="btn-Color-Rojo" class="btn col-md-4">Rojo</button>
                                     </div> 
                                     <div class="btn-group btn-group-sm">
-                                        <button type="button" id="btn-Color-Amarillo" class="btn col-md-4">Amarillo</button>
-                                        <button type="button" id="btn-Color-Verde" class="btn col-md-4">Verde</button>
-                                        <button type="button" id="btn-Color-Rosado" class="btn col-md-4">Rosado</button>
-                                        <button type="button" id="btn-Color-Naranja" class="btn col-md-4">Naranja</button>
+                                        <button type="button" onclick="ProductColor(5)" id="btn-Color-Amarillo" class="btn col-md-4">Amarillo</button>
+                                        <button type="button" onclick="ProductColor(6)" id="btn-Color-Verde" class="btn col-md-4">Verde</button>
+                                        <button type="button" onclick="ProductColor(7)" id="btn-Color-Rosado" class="btn col-md-4">Rosado</button>
+                                        <button type="button" onclick="ProductColor(8)" id="btn-Color-Naranja" class="btn col-md-4">Naranja</button>
+                                    </div>  
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" onclick="ProductColor(9)"  id="btn-Color-Morado" class="btn ">Morado</button>
+                                        <button type="button" onclick="ProductColor(10)" id="btn-Color-Imagen" class="btn ">Ver Imagen</button>
                                     </div> 
                                 </div>
                             </div>
@@ -346,14 +356,14 @@
                             <div class="col-sm-12">
                                 <h4>Información Extra</h4>
                             </div>
-                            <div class="col-sm-12">
-                                <textarea class="textareas" placeholder="Description"></textarea>
+                            <div class="col-sm-12" id="DesText">
+                                <textarea class="textareas" id="DescriptionProduct" onchange="CambioDatosNewProduct()" disabled placeholder="Descripción"></textarea>
                             </div> 
                             <div class="col-sm-12">
                                 <h4>Especificación</h4>
                             </div>
-                            <div class="col-sm-12">
-                                <textarea class="textareas" placeholder="Especificación"></textarea>
+                            <div class="col-sm-12" id="EspText">
+                                <textarea class="textareas" id="EspProduct" disabled onchange="CambioDatosNewProductEsp()" placeholder="Especificación"></textarea>
                             </div>
                             <!--active Informacion extra fin-->
                         </div>
@@ -479,5 +489,7 @@
         
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/Funcionabilidad.js"></script>
+        <script src="js/controlador.js"></script>
     </body>
 </html>

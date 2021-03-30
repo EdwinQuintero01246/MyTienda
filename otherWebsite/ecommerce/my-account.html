@@ -28,7 +28,7 @@
         <div class="top-bar">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" id="GeneUserArriba">
                         <i class="fa fa-envelope"></i>
                         mytiendat@developer.com 
                         <i class="fa fa-user"></i>
@@ -75,6 +75,7 @@
                                 <div class="dropdown-menu">
                                     <a href="#" class="dropdown-item">Login</a>
                                     <a href="#" class="dropdown-item">Registar</a>
+                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -195,10 +196,41 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="payment-tab" role="tabpanel" aria-labelledby="payment-nav">
-                                <h4>Payment Method</h4>
-                                <p>
+                                <!--h4>Métodos de pagos</h4-->
+                                <!--p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque.
-                                </p> 
+                                </p--> 
+                                <div class="payment-methods">
+                                    <h1>Métodos de pago</h1>
+                                    <div class="payment-methodH">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" onclick="DatosPago(1)" id="payment-1" name="payment">
+                                            <label class="custom-control-label" for="payment-1">Paypal</label>
+                                        </div>
+                                        <div id="contentPaymet-1">
+                                           <!--Contenido de paypal--> 
+                                        </div>
+                                    </div>
+                                    <div class="payment-methodH">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" onclick="DatosPago(2)" id="payment-3" name="payment">
+                                            <label class="custom-control-label" for="payment-3">Pago con Cuenta</label>
+                                        </div>
+                                        <div class="payment-contentH" id="payment-3-show">
+                                            <!--Contenido de Cuentas empresas-->
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="payment-methodH">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" onclick="DatosPago(3)" id="payment-4" name="payment">
+                                            <label class="custom-control-label" for="payment-4">Transferencia Bancaria</label>
+                                        </div>
+                                        <div class="payment-contentH" id="payment-4-show">
+                                            <!--Contenido de Tranferencia Bancarias-->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="address-tab" role="tabpanel" aria-labelledby="address-nav">
                                 <h4>Address</h4>
@@ -318,7 +350,7 @@
                 
                 <div class="row payment align-items-center">
                     <div class="col-md-6">
-                        <div class="payment-method">
+                        <div class="payment-methodH">
                             <h2>Aceptamos:</h2>
                             <img src="img/payment-method.png" alt="Payment Method" />
                         </div>
@@ -363,5 +395,7 @@
         
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/Funcionabilidad.js"></script>
+        <script src="js/controlador.js"></script>
     </body>
 </html>
