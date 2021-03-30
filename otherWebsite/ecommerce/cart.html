@@ -130,7 +130,141 @@
             </div>
         </div>
         <!-- Breadcrumb End -->
-        
+        <!--Crear paquetes inicio-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 row" style="padding-right: 0px;">
+                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="#" tabindex="-1"><i class="fa fa-cube"></i> Crear Paquete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Crear paquetes fin-->
+        <div class="container-fluid">
+            <div class="row" style=" margin-left: 0px; padding-left: 15px; margin-right: 0px;">
+                <div class="col-lg-8 row" style="padding: 12px ; background-color: white;">
+                    <!--div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="#" tabindex="-1"><i class="fa fa-cube"></i> Crear Paquete</a>
+                    </div-->
+                    <div class="col-md-4">
+                        <div class="product-short2">
+                            <div class="dropdown">
+                                <select class="form-select" id="CategoryProduct" aria-label="Default select example">
+                                    <option selected>Empresa</option>
+                                    <option value="1">Empresa 1</option>
+                                    <option value="2">Empresa 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-short2">
+                            <div class="dropdown">
+                                <select class="form-select" id="CategoryProduct" aria-label="Default select example">
+                                    <option selected>Producto</option>
+                                    <option value="1">Producto Name 1</option>
+                                    <option value="2">Producto Name 2</option>
+                                    <option value="3">Producto Name 3</option>
+                                    <option value="4">Producto Name 4</option>
+                                    <option value="5">Producto Name 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Paquetes Start -->
+        <div class="cart-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart-page-inner">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Nombre paquetes</th>
+                                            <th>Empresa</th>
+                                            <th>Productos</th>
+                                            <th>Remover</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="align-middle">
+                                        <tr>
+                                            <td>Paquete 1</td>
+                                            <td>Empresa 1</td>
+                                            <td>Sony</td>
+                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Paquete 1</td>
+                                            <td>Empresa 1</td>
+                                            <td>CAPA</td>
+                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Paquete 1</td>
+                                            <td>Empresa 1</td>
+                                            <td>Red</td>
+                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Paquete 2</td>
+                                            <td>Empresa 2</td>
+                                            <td>APPLE</td>
+                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Paquete 2</td>
+                                            <td>Empresa 2</td>
+                                            <td>Hp</td>
+                                            <td><button><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cart-page-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <select class="form-select" id="CategoryProduct" aria-label="Default select example" style=" margin-left: 0px;">
+                                        <option >Paquetes</option>
+                                        <option selected value="1">Paquetes 1</option>
+                                        <option value="2">Paquetes 2</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="coupon">
+                                        <input type="text" placeholder="Codigo de cupón">
+                                        <button>Aplicar Codigo</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cart-summary">
+                                        <div class="cart-content">
+                                            <h1>Resumen Compra</h1>
+                                            <h1>por paquetes</h1>
+                                            <p>Sub Total<span>$69</span></p>
+                                            <p>Costo de envío<span>$1</span></p>
+                                            <h2>Total<span>$70</span></h2>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <button><i class="fa fa-clock-o"></i> Update Carrito</button>
+                                            <button><i class="fa fa-shopping-bag"></i> Realizar Compra</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Paquetes End -->
         <!-- CarritoStart -->
         <div class="cart-page">
             <div class="container-fluid">
@@ -142,6 +276,8 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>Producto</th>
+                                            <th>Fabricante</th>
+                                            <th>Empresa</th>
                                             <th>Precio</th>
                                             <th>Cantidad</th>
                                             <th>Total</th>
@@ -156,6 +292,8 @@
                                                     <p>Product Name</p>
                                                 </div>
                                             </td>
+                                            <td>Empresa 1</td>
+                                            <td>Sony</td>
                                             <td>$99</td>
                                             <td>
                                                 <div class="qty">
@@ -174,6 +312,8 @@
                                                     <p>Product Name</p>
                                                 </div>
                                             </td>
+                                            <td>Empresa 1</td>
+                                            <td>CAPA</td>
                                             <td>$99</td>
                                             <td>
                                                 <div class="qty">
@@ -192,6 +332,8 @@
                                                     <p>Product Name</p>
                                                 </div>
                                             </td>
+                                            <td>Empresa 1</td>
+                                            <td>Red</td>
                                             <td>$99</td>
                                             <td>
                                                 <div class="qty">
@@ -210,6 +352,8 @@
                                                     <p>Product Name</p>
                                                 </div>
                                             </td>
+                                            <td>Empresa 2</td>
+                                            <td>APPLE</td>
                                             <td>$99</td>
                                             <td>
                                                 <div class="qty">
@@ -228,6 +372,8 @@
                                                     <p>Product Name</p>
                                                 </div>
                                             </td>
+                                            <td>Empresa 2</td>
+                                            <td>Hp</td>
                                             <td>$99</td>
                                             <td>
                                                 <div class="qty">
@@ -257,13 +403,14 @@
                                     <div class="cart-summary">
                                         <div class="cart-content">
                                             <h1>Resumen Compra</h1>
+                                            <h1>Individual</h1>
                                             <p>Sub Total<span>$99</span></p>
-                                            <p>Costo de envío<span>$1</span></p>
-                                            <h2>Total<span>$100</span></h2>
+                                            <p>Costo de envío<span>$20</span></p>
+                                            <h2>Total<span>$119</span></h2>
                                         </div>
                                         <div class="cart-btn">
-                                            <button>Update Carrito</button>
-                                            <button>Caja</button>
+                                            <button><i class="fa fa-clock-o"></i> Update Carrito</button>
+                                            <button><i class="fa fa-shopping-bag"></i> Realizar Compras</button>
                                         </div>
                                     </div>
                                 </div>

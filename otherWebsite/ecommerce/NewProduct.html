@@ -176,7 +176,10 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="product-content">
-                                        <div class="title"><h2 id="NombreProducto">Product Name</h2></div>
+                                        <div class="title">
+                                            <h2 id="NombreProducto">Product Name</h2>
+                                            <h4 id="FabricanteStyle2-1">(Fabricante)</h4>
+                                        </div>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -240,19 +243,13 @@
                                     <div id="description" class="container tab-pane active">
                                         <h4>Descripción Del Producto</h4>
                                         <p id="DescripciónProducto">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo. 
+                                            <!--texto descripción-->
                                         </p>
                                     </div>
                                     <div id="specification" class="container tab-pane fade">
                                         <h4>Especificación Del Producto</h4>
                                         <ul id="SpecificProduct">
-                                            <!--
-                                            <li>Lorem ipsum dolor sit amet</li>
-                                            <li>Lorem ipsum dolor sit amet</li>
-                                            <li>Lorem ipsum dolor sit amet</li>
-                                            <li>Lorem ipsum dolor sit amet</li>
-                                            <li>Lorem ipsum dolor sit amet</li>
-                                            -->
+                                            <!--texto de especificación-->
                                         </ul>
                                     </div>
                                 </div>
@@ -271,6 +268,10 @@
                             <div class="col-md-12">
                                 <label>Nombre Producto</label>
                                 <input id="NameProduct" onchange="CambioDatosNewProduct()" class="form-control" type="text" placeholder="Nombre Producto">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Fabricante</label>
+                                <input id="FabricanteNewProduct" onchange="CambioDatosNewProduct()" class="form-control" type="text" placeholder="Nombre Fabricante">
                             </div>
                             <div class="col-md-6">
                                 <label>Precio</label>

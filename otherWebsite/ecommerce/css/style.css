@@ -2467,6 +2467,10 @@ h2 {
     appearance: none;
     margin: 0px  12px 5px 12px;
 }
+.form-select:hover{
+    color: #FF6F61;
+    border-color: #FF6F61;
+}
 .textareas{
     width: 100%;
     height: 80px;
@@ -2490,3 +2494,36 @@ h2 {
     font-weight: 700;
 }
 .Pad{padding-top: 12px;}
+.FabricanteStyle{color: #f0f0f0;}
+.FabricanteStyle2{color: #000000;}
+.product-short2{
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+.dropdown-toggle2{
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid #353535;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.dropdown-toggle2:hover {
+    color: #9144EA;
+    border-color: #FF6F61;
+}
+.dropdown-toggle2::after{
+    float: right;
+    margin-top: 10px;
+}
+
+.dropdown-menu2 {
+    margin: -1px 0 0 0;
+    border-radius: 0;
+}
