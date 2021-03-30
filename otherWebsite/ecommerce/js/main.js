@@ -235,5 +235,15 @@
             $('#' + checkbox_id + '-show').slideDown();
         }
     });
+    //pagos 
+    /*$('.my-account .payment-methodH .custom-control-input').change(function () {
+        if ($(this).prop('checked')) {
+            var checkbox_id = $(this).attr('id');
+            $('.my-account .payment-methodH .payment-contentH').slideUp();
+            $('#' + checkbox_id + '-show').slideDown();
+        }
+    });*/
+
+    
 })(jQuery);
 

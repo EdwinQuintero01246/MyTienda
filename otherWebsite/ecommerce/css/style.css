@@ -2476,3 +2476,17 @@ h2 {
     border-radius: 4px;
     margin-bottom: 15px;
 }
+.credit-card-div  span { padding-top:10px; }
+.credit-card-div img { padding-top:30px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }
+
+.Transferencia-Central{background-color: #F8F8F8; border-radius: 11px; margin-left: 0px;}
+.Transferencia-dou{padding-right: 0px; margin-right: 0px; margin-left: 0px; padding-left: 0px; border-radius: 11px;}
+.Transferencia-banner{background-color: #312450; padding-top: 12px;border-top-left-radius: 11px;border-top-right-radius: 11px; font-size: x-large; color: #FFFF;text-align: center; font-weight: bold;}
+.TextTranfer{text-align: end;
+    font-size: larger;
+    color: black;
+    font-weight: 700;
+}
+.Pad{padding-top: 12px;}
