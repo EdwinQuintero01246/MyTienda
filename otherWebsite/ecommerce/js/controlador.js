@@ -4,13 +4,13 @@ $(document).ready(function() {
 var Specific=[];
 function CambioDatosNewProduct(){
     $('#NombreProducto').html($(`<h2 id="NombreProducto">${$('#NameProduct').val()}</h2>`));
-    $('#PrecioProducto').html($(`<p id="PrecioProducto">${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
+    $('#PrecioProducto').html($(`<p id="PrecioProducto">$${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
     $('#DescuentoProducto').html($(`<span id="DescuentoProducto">$ ${$('#DesProduct').val()}</span>`));
     $('#CantidadProducto').val($('#QuantityProduct').val());
-    console.log($('#EspProduct').val());
+    console.log($('#FabricanteNewProduct').val());
     //console.log('hola');
     $('#DescripciónProducto').html($(`<p id="DescripciónProducto">${$('#DescriptionProduct').val()}</p>`));
-
+    $('#FabricanteStyle2-1').html($(`<h4 id="FabricanteStyle2-1">${$('#FabricanteNewProduct').val()}</h4>`));
 }
 function CambioDatosNewProductEsp(){
     
