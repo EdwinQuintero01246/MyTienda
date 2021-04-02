@@ -4,7 +4,7 @@ USE Ventas;
 
 CREATE TABLE IF NOT EXISTS TipoCliente (
   IDTipoCiente INT AUTO_INCREMENT PRIMARY KEY,
-  tipo VARCHAR(100),
+  Tipo ENUM('online','tienda'),
   Descripcion VARCHAR(100)
 );
 
@@ -366,7 +366,7 @@ END $$
 DELIMITER ;
 
 
-INSERT INTO TipoCliente (Tipo,Descripcion) VALUES(0,'Online');
+INSERT INTO TipoCliente (Tipo,Descripcion) VALUES(0,'compra en linea');
 INSERT INTO Cliente (Nombre,Apellifo,Telefono,Correo,IDTipoCliente) VALUES('David','Jacome','2222-2222','Correo',1);
 INSERT INTO Tarjeta (numero,nombre,Apellido,IDCliente,Tipo) VALUES('2222-2222-2222-2222','David','Jacome',1,1);
 
