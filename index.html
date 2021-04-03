@@ -35,7 +35,8 @@
 		<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 		<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 		<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-	  
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 		<!-- Template Main CSS File -->
 		<link href="assets/css/style.css" rel="stylesheet">
 
@@ -71,12 +72,21 @@
 							<div class="col-6  hero-img" data-aos="zoom-in" data-aos-delay="200" style="">
 								<img src="images/landing_1.jpg" class="img-fluid animated" style="animation: up-down 2s ease-in-out infinite alternate-reverse both; width: 100%;border-radius: 7px" alt="">
 							</div>
-							<div class="inner col-6">
-								<h1 class="h4TeamAnimation" style="color: white; font-weight: bold;">Tienda en linea </h1>
-								<p class="h4TeamAnimation textp">Mejora tu experiencia en compras en línea<br /></p>
-								<p class="h4TeamAnimation textp">  <span class="spanTextP">▀</span>  Rapido</p>
-								<p class="h4TeamAnimation textp">  <span class="spanTextP">▀</span>  Eficiente</p>
-								<p class="h4TeamAnimation textp">  <span class="spanTextP">▀</span>  Seguro</p>
+							<div class="inner col-6" id="htmlprueba">
+								<h1 class="h4TeamAnimation" style="color: white; font-weight: bold;font-size: 5rem;">Tienda en linea </h1>
+								
+								<!--p class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;">  <span class="spanTextP">▀</span>  Rapido</p>
+								<p class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;">  <span class="spanTextP">▀</span>  Eficiente</p>
+								<p class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;">  <span class="spanTextP">▀</span>  Seguro</p-->
+								<p class="h4TeamAnimation textp" id="textPP" style="font-size: 4rem;">Mejora tu experiencia en compras en línea<br /></p>
+								<div class="contenedor">
+									<p> </p>
+									<ul  id="ulID">
+										<li class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;"><!--span class="spanTextP">▀</span--><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Rapido</li>
+										<li class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;"><!--span class="spanTextP">▀</span--><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Eficiente</li>
+										<li class="h4TeamAnimation textp" id="textPPP" style="font-size: 4rem;"><!--span class="spanTextP">▀</span--><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Seguro</li>
+									</ul>
+								</div>
 								<ul class="actions">
 									<li><a href="#three" class="button scrolly">Ir a la tienda</a></li>
 								</ul>
@@ -141,9 +151,10 @@
 						<div class="section-title">
 							<h2>Equipo desarrollo</h2>
 						</div>
-						<div class="row" style=" margin-left: 0px; ">
-							<div class="col-lg-6 mt-4" style=" background-color: #F3F5FA;">
-								<div class="member d-flex align-items-start" id="teamanation" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+						<div class="row" style=" margin-left: 0px; width: 100%;">
+							<div class="col-lg-6 mt-4 " id="animationDeveloper" style=" background-color: #F3F5FA; height: 200px;">
+								<!--principal-->
+								<div class="member d-flex align-items-start animationDeveloperfrente"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
 								  <div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/JoseBarrientos.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
 								  <div class="member-info" style=" padding-left: 30px; ">
 									<h4 class="h4TeamAnimation">Jose Barrientos</h4>
@@ -158,9 +169,26 @@
 									</div>
 								  </div>
 								</div>
+								<!--Developer-->
+								<div class="member d-flex align-items-start animationDeveloperatras"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+								  <div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/JoseBarrientos.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
+								  <div class="member-info" style=" padding-left: 30px; ">
+									<h4 class="h4TeamAnimation">Jose Barrientos</h4>
+									<span class="textTeamAnimation textTeamAnimationcolor">Backend Developer</span>
+									<p class="textTeamAnimation textTeamAnimationcolor"></p>
+									<p class="textTeamAnimation">Python</p>
+									<div class="Social">
+									  <a href=""><i class="ri-twitter-fill"></i></a>
+									  <a href=""><i class="ri-facebook-fill"></i></a>
+									  <a href=""><i class="ri-instagram-fill"></i></a>
+									  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+									</div>
+								  </div>
+								</div>
 							  </div>
-							  <div class="col-lg-6 mt-4" style=" background-color: #F3F5FA;" id="teamanation">
-								<div class="member d-flex align-items-start" id="teamanation" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+							  <div class="col-lg-6 mt-4 " id="animationDeveloper" style=" background-color: #F3F5FA; height: 200px;" >
+								<!--principal-->
+								<div class="member d-flex align-items-start animationDeveloperfrente"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
 								  <div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/EdwinQuintero.jpeg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
 								  <div class="member-info" style=" padding-left: 30px; ">
 									<h4 class="h4TeamAnimation" >Edwin Quintero</h4>
@@ -175,9 +203,26 @@
 									</div>
 								  </div>
 								</div>
+								<!--Developer-->
+								<div class="member d-flex align-items-start animationDeveloperatras"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+									<div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/EdwinQuintero.jpeg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
+									<div class="member-info" style=" padding-left: 30px; ">
+									  <h4 class="h4TeamAnimation" >Edwin Quintero</h4>
+									  <span class="textTeamAnimation  textTeamAnimationcolor">Frontend Developer</span>
+									  <p class="textTeamAnimation  textTeamAnimationcolor">Javascript</p>
+									  <p class="textTeamAnimation"> Diseñador en Html y CSS  </p>
+									  <div class="Social">
+										<a href=""><i class="ri-twitter-fill"></i></a>
+										<a href=""><i class="ri-facebook-fill"></i></a>
+										<a href=""><i class="ri-instagram-fill"></i></a>
+										<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+									  </div>
+									</div>
+								  </div>
 							  </div>
-							  <div class="col-lg-6 mt-4" style=" background-color: #F3F5FA;" id="teamanation">
-								<div class="member d-flex align-items-start" id="teamanation" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+							  <div class="col-lg-6 mt-4 " id="animationDeveloper" style=" background-color: #F3F5FA; height: 200px;" >
+								<!--principal-->
+								<div class="member d-flex align-items-start animationDeveloperfrente"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
 								  <div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/Yoselin Montes.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
 								  <div class="member-info" style=" padding-left: 30px; ">
 									<h4 class="h4TeamAnimation" >Yoselin Montes</h4>
@@ -192,9 +237,26 @@
 									</div>
 								  </div>
 								</div>
+								<!--Developer-->
+								<div class="member d-flex align-items-start animationDeveloperatras"  data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+									<div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/Yoselin Montes.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
+									<div class="member-info" style=" padding-left: 30px; ">
+									  <h4 class="h4TeamAnimation" >Yoselin Montes</h4>
+									  <span class="textTeamAnimation  textTeamAnimationcolor">Frontend Developer</span>
+									  <p class="textTeamAnimation  textTeamAnimationcolor">Javascript</p>
+									  <p class="textTeamAnimation"></p>
+									  <div class="Social">
+										<a href=""><i class="ri-twitter-fill"></i></a>
+										<a href=""><i class="ri-facebook-fill"></i></a>
+										<a href=""><i class="ri-instagram-fill"></i></a>
+										<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+									  </div>
+									</div>
+								  </div>
 							  </div>
-							  <div class="col-lg-6 mt-4" style=" background-color: #F3F5FA;" id="teamanation">
-								<div class="member d-flex align-items-start" id="teamanation" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+							  <div class="col-lg-6 mt-4 " id="animationDeveloper" style=" background-color: #F3F5FA; height: 200px;" >
+								<!--principal-->
+								<div class="member d-flex align-items-start animationDeveloperfrente" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
 								  <div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/David Jacome.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
 								  <div class="member-info" style=" padding-left: 30px; ">
 									<h4 class="h4TeamAnimation" >David Jacome</h4>
@@ -209,6 +271,22 @@
 									</div>
 								  </div>
 								</div>
+								<!--Developer-->
+								<div class="member d-flex align-items-start animationDeveloperatras" data-aos="zoom-in" data-aos-delay="200" style=" background-color: white; border-radius: 8px; padding: 12px;">
+									<div class="pic" style=" overflow: hidden; width: 180px; border-radius: 50%; "><img src="images/team/David Jacome.jpg" class="img-fluid" alt="" style=" max-width: 100%; height: auto; "></div>
+									<div class="member-info" style=" padding-left: 30px; ">
+									  <h4 class="h4TeamAnimation" >David Jacome</h4>
+									  <span class="textTeamAnimation  textTeamAnimationcolor">Database Developer</span>
+									  <p class="textTeamAnimation  textTeamAnimationcolor">MySQL</p>
+									  <p class="textTeamAnimation"></p>
+									  <div class="Social">
+										<a href=""><i class="ri-twitter-fill"></i></a>
+										<a href=""><i class="ri-facebook-fill"></i></a>
+										<a href=""><i class="ri-instagram-fill"></i></a>
+										<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+									  </div>
+									</div>
+								  </div>
 							  </div>
 						</div>
 					</section>
