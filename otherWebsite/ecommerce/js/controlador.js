@@ -1,23 +1,30 @@
+//para iniciar datos u objetos cuando se recarga la pagina
 $(document).ready(function() {
-    console.log($('#NameProduct').val());
 })
-var Specific=[];
+//funcion interactiva de newProducto cuando se realize algun cambio esto esta en nuevo producto, con un onchange()
 function CambioDatosNewProduct(){
+    //ver como se mira en nombre del producto 
     $('#NombreProducto').html($(`<h2 id="NombreProducto">${$('#NameProduct').val()}</h2>`));
-    $('#PrecioProducto').html($(`<p id="PrecioProducto">$${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
-    $('#DescuentoProducto').html($(`<span id="DescuentoProducto">$ ${$('#DesProduct').val()}</span>`));
-    $('#CantidadProducto').val($('#QuantityProduct').val());
-    console.log($('#FabricanteNewProduct').val());
-    //console.log('hola');
-    $('#DescripciónProducto').html($(`<p id="DescripciónProducto">${$('#DescriptionProduct').val()}</p>`));
+    //ver como se mira en nombre del fabricante 
     $('#FabricanteStyle2-1').html($(`<h4 id="FabricanteStyle2-1">${$('#FabricanteNewProduct').val()}</h4>`));
+    //ver como se mira el precio 
+    $('#PrecioProducto').html($(`<p id="PrecioProducto">$${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
+    //ver como se mira el descuento
+    $('#DescuentoProducto').html($(`<span id="DescuentoProducto">$ ${$('#DesProduct').val()}</span>`));
+    //ver como se mira Cantidad para este producto 
+    $('#CantidadProducto').val($('#QuantityProduct').val());
+    //ver como se mira la descripcion de este producto
+    $('#DescripciónProducto').html($(`<p id="DescripciónProducto">${$('#DescriptionProduct').val()}</p>`));
 }
+//funcion interactiva de newProducto cuando se realize algun cambio 
 function CambioDatosNewProductEsp(){
-    
+    //ver como se mira la especificación de este producto
     $('#SpecificProduct').append($(`<li>${$('#EspProduct').val()}</li>`));
     $('#EspProduct').val('');
-    //Specific=[{especificacion=$('#EspProduct').val('')}];
 }
+
+//funcion el que realiza las talla de este producto, el cual habilita o deshabilita cada una 
+//dependiendo el parametro que le hemos enviado
 function ProductSize(x){
     var XX=x;
     //$('#AddTalla').html($(``));
@@ -64,6 +71,11 @@ function ProductSize(x){
         document.getElementById("btn-size-Extra").disabled = true;
     }
 }
+
+
+
+//funcion el que realiza el color de este producto, el cual habilita o deshabilita cada una 
+//dependiendo el parametro que le hemos enviado
 function ProductColor(x){
     var XX=x;
     //$('#AddTalla').html($(``));
@@ -106,10 +118,16 @@ function ProductColor(x){
         document.getElementById("btn-Color-Imagen").disabled = true;
     }
 }
+
+
+
+// optiene esta variable si se habilita el checkbox, para realizar el descuento 
 var checkbox = document.getElementById('discount');
+//pasamos a realizar el evento
 checkbox.addEventListener( 'change', function() {
+
     if(this.checked) {
-       //alert('checkbox esta seleccionado');
+        //si esta precionado realiza esta opción
        $('#DLInput').html($(`
             <label>Descuento</label>
             <input id="DesProduct" class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Descuento">
@@ -125,10 +143,12 @@ checkbox.addEventListener( 'change', function() {
     }
 });
 
+// optiene esta variable si se habilita el checkbox, para realizar la información extra 
 var checkbox = document.getElementById('Info-xtra');
+//pasamos a realizar el evento
 checkbox.addEventListener( 'change', function() {
     if(this.checked) {
-       //alert('checkbox esta seleccionado');
+        //si esta precionado realiza esta opción
        $('#DesText').html($(`
        <textarea class="textareas" id="DescriptionProduct" onchange="CambioDatosNewProduct()" placeholder="Descripción"></textarea>
        `));
@@ -144,9 +164,12 @@ checkbox.addEventListener( 'change', function() {
         `));
     }
 });
+
+//esta es para habilitar los formas de pagos, ya sea paypal, cuenta o tranferencia de bancos. cuando se realiza el evento de un click
 function DatosPago(x){
     var XX=x;
     if (XX==1){
+        //si es uno se realiza el metodo de pago Paypal
         $('#payment-4-show').html($(``));
         $('#payment-3-show').html($(``));
         $('#contentPaymet-1').html($(`
@@ -206,6 +229,7 @@ function DatosPago(x){
         </div>
         `));
     }if (XX==2){
+        //si es dos se realiza el metodo de pago cuenta con la empresa
         $('#contentPaymet-1').html($(``));
         $('#payment-4-show').html($(``));
         $('#payment-3-show').html($(`
@@ -241,6 +265,7 @@ function DatosPago(x){
             </div>`
         ));
     }if (XX==3){
+        //si es tres se realiza el metodo de pago por tranferencia bancaria
         $('#contentPaymet-1').html($(``));
         $('#payment-3-show').html($(``));
         $('#payment-4-show').html($(`

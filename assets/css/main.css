@@ -3909,10 +3909,7 @@ input, select, textarea {
 			}
 
 		}
-		#teamanation{}
-		#teamanation:hover{transition-delay: 0.1s; background-color: #261c3e; /*animation: up-down 3s ease-in-out infinite alternate-reverse both;*/
-			/*transform: translateZ(0) scale(1);*/
-			transform: translateY(-10px);}
+		
 		.h4TeamAnimation{    font-size: xx-large;
 			}
 		.textTeamAnimation{font-size: larger;
@@ -3955,12 +3952,59 @@ input, select, textarea {
 		   .Social a + a {
 			margin-left: 8px;
 		  }
-		  .textp{color: white;}
+		  .textp{
+			  /*color: white;*/
+
+			}
 		  .spanTextP{margin-left: 25px; font-size: medium; margin-right: 6px; }
 
+			#textPP{
+				background: #ccc;
+				background: linear-gradient(100deg,#FABE78, #FFFFFF);
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+				font-weight: 800;
+			}
+			#textPPP{
+				background: #ccc;
+				background: linear-gradient(183deg,#FABE78, #FFFFFF);
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+			.contenedor{
+				display: flex;
+				height: 44px;
+				line-height: 40px;
+				overflow: hidden;
+			}
+			#ulID{
+				list-style: none;
+				padding-left: 10px;
+				animation: cambiar 7s infinite;
 
+			}
+			#ulID, #textPP{
+				margin: 0px;
+			}
+			@keyframes cambiar {
+				0%{margin-top: 0px;}
+				20%{margin-top: 0px;}
 
+				25%{margin-top: -45px;}
+				50%{margin-top: -45px;}
 
+				
+				55%{margin-top: -90px;}
+				80%{margin-top: -90px;}
+
+				
+				85%{margin-top: -45px;}
+				95%{margin-top: -45px;}
+				
+				100%{margin-top: 0px;}
+			}
 
 
 		  html {
@@ -4248,3 +4292,28 @@ input, select, textarea {
 				background-position: top right;
 				background-repeat: no-repeat;
 				background-size: 100% 100%;}
+
+			#animationDeveloper{
+				transform-style: preserve-3d;
+				position: relative;
+				/*backface-visibility: hidden;*/
+
+			}
+			#animationDeveloper:hover{
+				transform: rotateY(180deg);
+				transition: 2s;
+
+				/*transition-delay: 0.1s; background-color: #261c3e; */
+			}
+			.animationDeveloper2{
+				background-color: #FFFFFF;
+				transform: rotateY(180deg);
+			}
+
+			.animationDeveloperfrente{position: absolute; width: 97%;}
+			.animationDeveloperatras{transform: rotateY(180deg);position: absolute;width: 97%;}
+
+			#teamanation{}
+			#teamanation:hover{transition-delay: 0.1s; background-color: #261c3e;
+			transform: translateY(-10px);}
+			

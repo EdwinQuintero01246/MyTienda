@@ -1,3 +1,4 @@
+//para iniciar datos u objetos cuando se recarga la pagina
 $(document).ready(function() {
     $('#GeneUserArriba').html($(`
         <i class="fa fa-envelope"></i>
@@ -7,6 +8,9 @@ $(document).ready(function() {
         <i class=""></i>
     `));
 })
+
+// envio de datos para habilitar el ingreso al sistema por medio de Login
+//se envia usuario/Email y contraseña
 function Logiarse(){
     //console.log($('#login').val(),$('#password').val());
     var parametros =
