@@ -4,7 +4,7 @@ USE Ventas;
 
 CREATE TABLE IF NOT EXISTS TipoCliente (
   IDTipoCiente INT AUTO_INCREMENT PRIMARY KEY,
-  Tipo ENUM('online','tienda'),
+  tipo VARCHAR(100),
   Descripcion VARCHAR(100)
 );
 
@@ -157,7 +157,6 @@ CREATE TABLE IF NOT EXISTS Paquete (
   FOREIGN KEY (IDProducto) REFERENCES Producto(IDProducto) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
- -- Busca si el cliente es en linea y si lo es retorna 1 con el id del cliente; sino retorna 0 y el id del cliente
 DELIMITER $$ 
 DROP PROCEDURE IF EXISTS sp_searchAdmin;
 CREATE PROCEDURE sp_searchAdmin(
@@ -199,8 +198,6 @@ CREATE PROCEDURE sp_searchAdmin(
         CLOSE cursorUser;  
 END $$
 
----si el cliente tiene contrato debe pagar mensualmente con su numero de cuenta, si no su pago lo realiza con su tarjeta de credito o debito.
----retorona 1 si el cliente tiene contrato con el id del cliente, sino retorna 0 con su idcliente
 DELIMITER $$ 
 DROP PROCEDURE IF EXISTS sp_searchClient;
 CREATE PROCEDURE sp_searchClient(
@@ -236,7 +233,6 @@ CREATE PROCEDURE sp_searchClient(
         CLOSE cursorUser;  
 END $$
 
----retorna la cantidad total de producto que existe en el almacen con su id
 DELIMITER $$ 
 DROP PROCEDURE IF EXISTS sp_searchProductA;
 CREATE PROCEDURE sp_searchProductA(
@@ -298,8 +294,6 @@ DROP TRIGGER IF EXISTS PedidoAlmacen;
             END IF;
 END $$
 
-
---retorna la cantidad total de producto que existe en la tienda con su id
 DELIMITER $$ 
 DROP PROCEDURE IF EXISTS sp_searchProductT;
 CREATE PROCEDURE sp_searchProductT(
@@ -353,7 +347,7 @@ DROP TRIGGER IF EXISTS PedidoCliente;
             DECLARE prec INT;
 
             CALL sp_searchProductT(NEW.IDProducto, cant, idstock, idtiend, prec);
-            
+
             IF cant <= 0 THEN
                 DELETE FROM Stock Where IDStock = idstock;
             END IF;
@@ -366,23 +360,18 @@ END $$
 DELIMITER ;
 
 
-INSERT INTO TipoCliente (Tipo,Descripcion) VALUES(0,'compra en linea');
-INSERT INTO Cliente (Nombre,Apellifo,Telefono,Correo,IDTipoCliente) VALUES('David','Jacome','2222-2222','Correo',1);
-INSERT INTO Tarjeta (numero,nombre,Apellido,IDCliente,Tipo) VALUES('2222-2222-2222-2222','David','Jacome',1,1);
+INSERT INTO TipoCliente (Tipo,Descripcion) VALUES(0,'Online');
+INSERT INTO Cliente (Nombre,Apellifo,Telefono,Correo,IDTipoCliente) VALUES('Jorge','Mendez','2222-2222','Correo',1);
+INSERT INTO Tarjeta (numero,nombre,Apellido,IDCliente,Tipo) VALUES('2222-2222-2222-2222','Carlos','Perez',1,1);
 
-INSERT INTO Tienda (Nombre,Direccion,Telefono) VALUES('DA','Tegucigalpa','2222-2222');
+INSERT INTO Tienda (Nombre,Direccion,Telefono) VALUES('LadyLee','Tegucigalpa','2222-2222');
 INSERT INTO Contrato (IDCliente,IDTienda,cuenta) VALUES(1,1,'1234214214123');
 
 INSERT INTO Fabricante (Nombre,Descripcion,ubicacion) VALUES('Dell','sdas','Tegucigalpa');
 INSERT INTO Categoria (nombre,Descripcion) VALUES('Laptop','dasdasd');
-INSERT INTO Producto (nombre,imagen,descripcion,precio,IDCategoria,IDFabricante) VALUES('Computadora','adsadad','asdad',30000,1,1);
+INSERT INTO Producto (nombre,imagen,descripcion,precio,IDCategoria,IDFabricante) VALUES('Computadora','Intel Core I7','asdad',30000,1,1);
 INSERT INTO Stock (IDTienda,IDProducto,cantidad) VALUES(1,1,100);
 INSERT INTO Almacen (Direccion,Telefono,IDProducto,Cantidad) VALUES('Tegucigalpa','2222-2222',1,50);
 
 INSERT INTO Pedido (IDTienda,IDAlmacen,Cantidad,IDProducto,Estado) VALUES(1,1,3,1,1);
 INSERT INTO PedidoCliente (IDCliente,IDTienda,IDProducto,Cantidad) VALUES(1,1,1,15);
-
-INSERT INTO Venta (Descripcion,IDFactura) VALUES(1,1,'1234214214123');
-INSERT INTO Paquete (peso,altura,ancho,largo,Cantidad,IDProducto) VALUES(1,1,'1234214214123');
-INSERT INTO VentaPorRemitente (IDVenta,IDRemitente) VALUES(1,1,'1234214214123');
-INSERT INTO Remitente (Nombre,Apellifo,Direccion,Telefono) VALUES(1,1,'1234214214123');
