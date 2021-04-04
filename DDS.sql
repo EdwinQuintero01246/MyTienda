@@ -3,9 +3,9 @@ CREATE DATABASE Ventas CHARACTER SET utf8;
 USE Ventas;
 
 CREATE TABLE IF NOT EXISTS TipoCliente (
-  IDTipoCiente INT AUTO_INCREMENT PRIMARY KEY,
+  idTipoCiente INT AUTO_INCREMENT PRIMARY KEY,
   tipo VARCHAR(100),
-  Descripcion VARCHAR(100)
+  descripcion VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS Cliente (
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
   Telefono VARCHAR(100),
   correo VARCHAR(100),
   IDTipoCliente INT,
-    FOREIGN KEY (IDTipoCliente) REFERENCES TipoCliente(IDTipoCiente) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (IDTipoCliente) REFERENCES TipoCliente(idTipoCiente) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Tarjeta (
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS Fabricante (
 CREATE TABLE IF NOT EXISTS Categoria (
   IDCategoria INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100),
-  Descripcion VARCHAR(100)
+  descripcion VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS Producto (
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS Contrato (
 
 CREATE TABLE IF NOT EXISTS Venta (
   IDVenta INT AUTO_INCREMENT PRIMARY KEY,
-  Descripcion VARCHAR(100),
+  descripcion VARCHAR(100),
   Fecha TIMESTAMP DEFAULT NOW() ON UPDATE NOW(),
   IDFactura INT,
   FOREIGN KEY (IDFactura) REFERENCES Factura(IDFactura) ON DELETE CASCADE ON UPDATE CASCADE
@@ -153,8 +153,7 @@ CREATE TABLE IF NOT EXISTS Paquete (
   ancho NUMERIC,
   largo NUMERIC,
   Cantidad INT,
-  IDProducto INT,
-  FOREIGN KEY (IDProducto) REFERENCES Producto(IDProducto) ON DELETE CASCADE ON UPDATE CASCADE
+  IDProducto INT
 );
 
 DELIMITER $$ 
@@ -281,13 +280,20 @@ DROP TRIGGER IF EXISTS PedidoAlmacen;
         FOR EACH ROW
         BEGIN
             DECLARE cant INT;
-            DECLARE idprod INT;
+            DECLARE cantP INT;
+                    DECLARE prec INT;
+        DECLARE idprod INT;
+        DECLARE idtiend INT;
+        DECLARE idstock INT;
+
             DECLARE idalm INT;
             DECLARE idsto INT;
+
             CALL sp_searchProductA(OLD.IDAlmacen, OLD.IDProducto, cant, idprod, idalm,idsto);
+            CALL sp_searchProductT(OLD.IDProducto, cantP, idstock, idtiend, prec);
 
             IF cant >= NEW.Cantidad THEN
-                UPDATE Stock SET Cantidad = cant+OLD.Cantidad WHERE IDStock = idsto; 
+                UPDATE Stock SET Cantidad = cantP+NEW.Cantidad WHERE IDStock = idsto; 
 
                 UPDATE Almacen SET Cantidad = cant - NEW.Cantidad 
                     WHERE IDAlmacen = OLD.IDAlmacen;
@@ -360,18 +366,27 @@ END $$
 DELIMITER ;
 
 
-INSERT INTO TipoCliente (Tipo,Descripcion) VALUES(0,'Online');
+INSERT INTO TipoCliente (Tipo,descripcion) VALUES(0,'Online');
 INSERT INTO Cliente (Nombre,Apellifo,Telefono,Correo,IDTipoCliente) VALUES('Jorge','Mendez','2222-2222','Correo',1);
 INSERT INTO Tarjeta (numero,nombre,Apellido,IDCliente,Tipo) VALUES('2222-2222-2222-2222','Carlos','Perez',1,1);
 
 INSERT INTO Tienda (Nombre,Direccion,Telefono) VALUES('LadyLee','Tegucigalpa','2222-2222');
 INSERT INTO Contrato (IDCliente,IDTienda,cuenta) VALUES(1,1,'1234214214123');
 
-INSERT INTO Fabricante (Nombre,Descripcion,ubicacion) VALUES('Dell','sdas','Tegucigalpa');
-INSERT INTO Categoria (nombre,Descripcion) VALUES('Laptop','dasdasd');
+INSERT INTO Fabricante (Nombre,descripcion,ubicacion) VALUES('Dell','sdas','Tegucigalpa');
+INSERT INTO Categoria (nombre,descripcion) VALUES('Laptop','dasdasd');
 INSERT INTO Producto (nombre,imagen,descripcion,precio,IDCategoria,IDFabricante) VALUES('Computadora','Intel Core I7','asdad',30000,1,1);
-INSERT INTO Stock (IDTienda,IDProducto,cantidad) VALUES(1,1,100);
 INSERT INTO Almacen (Direccion,Telefono,IDProducto,Cantidad) VALUES('Tegucigalpa','2222-2222',1,50);
+INSERT INTO Stock (IDTienda,IDProducto,cantidad) VALUES(1,1,100);
 
-INSERT INTO Pedido (IDTienda,IDAlmacen,Cantidad,IDProducto,Estado) VALUES(1,1,3,1,1);
+select * from Almacen;
+select * from Stock;
+
+INSERT INTO Pedido (IDTienda,IDAlmacen,Cantidad,IDProducto,Estado) VALUES(1,1,40,1,1);
+UPDATE Pedido SET  Estado=1 WHERE IDPedido=1;
+select * from Almacen;
+select * from Stock;
+
+select * from Almacen;
 INSERT INTO PedidoCliente (IDCliente,IDTienda,IDProducto,Cantidad) VALUES(1,1,1,15);
+select * from Stock;
