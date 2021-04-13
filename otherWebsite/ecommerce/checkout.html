@@ -8,7 +8,7 @@
         <meta content="eCommerce HTML Template Free Download" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/icon/icons8-motor-de-papel-tapiz-64.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -58,6 +58,9 @@
                             <a href="product-list.html" class="nav-item nav-link">Productos</a>
                             <a href="product-detail.html" class="nav-item nav-link">Producto Detalles</a>
                             <a href="cart.html" class="nav-item nav-link">Carrito</a>
+                            <!--Solo para administrador-->
+                            <a href="my-Stores.html" id="IDStoresHtml" class="nav-item nav-link">MiS Tiendas</a>
+                            <!--HAsta aqui-->
                             <a href="checkout.html" class="nav-item nav-link active">Pagos</a>
                             <a href="my-account.html" class="nav-item nav-link">Mi Cuenta</a>
                             <div class="nav-item dropdown">
@@ -73,9 +76,9 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Registar</a>
-                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user-plus" aria-hidden="true"></i>Registar</a>
+                                    <a href="#" onclick="cerrarsesion()" class="dropdown-item"><i class="fa fa-chevron-left" aria-hidden="true"></i>Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>

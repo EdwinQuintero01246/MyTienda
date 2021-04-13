@@ -56,8 +56,8 @@
                         <div class="navbar-nav mr-auto">
                             <a href="index.html" class="nav-item nav-link">Inicio</a>
                             <a href="product-list.html" class="nav-item nav-link">Productos</a>
-                            <a href="product-detail.html" class="nav-item nav-link">Producto Detalles</a>
-                            <a href="cart.html" class="nav-item nav-link active">Carrito</a>
+                            <a href="product-detail.html" class="nav-item nav-link active">Producto Detalles</a>
+                            <a href="cart.html" class="nav-item nav-link">Carrito</a>
                             <!--Solo para administrador-->
                             <a href="my-Stores.html" id="IDStoresHtml" class="nav-item nav-link">MiS Tiendas</a>
                             <!--HAsta aqui-->
@@ -120,186 +120,72 @@
                 </div>
             </div>
         </div>
-        <!-- Bottom Bar End -->
+        <!-- Bottom Bar End --> 
         
         <!-- Breadcrumb Start -->
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="product-list.html">Productos</a></li>
-                    <li class="breadcrumb-item active">Carrito</li>
+                    <li class="breadcrumb-item active">Tiendas</li>
                 </ul>
             </div>
         </div>
         <!-- Breadcrumb End -->
-        <!--Ir paquetes inicio-->
+        <!--Button direccionales-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 row" style="padding-right: 0px;">
+                <div class="col-lg-12 row" style="padding-right: 0px;">
                     <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
-                        <a class="btn" id="ProductUp" href="cart packages.html" tabindex="-1"><i class="fa fa-cube"></i> Ir a Paquete</a>
+                        <a class="btn" id="ProductUp" href="NewProduct.html" tabindex="-1"><i class="fa fa-upload"></i> Nuevo Producto</a>
+                    </div>
+                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" padding-right: 0px;">
+                        <a class="btn" id="ProductUp" href="stocktaking.html" tabindex="-1"><i class="fa fa-list"></i> Ver Nuestro Almacén</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Ir paquetes End -->
-        <!-- CarritoStart -->
-        <div class="cart-page">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="cart-page-inner">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>Producto</th>
-                                            <th>Fabricante</th>
-                                            <th>Empresa</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>Pagar</th>
-                                            <th>Remover</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="align-middle">
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-1.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>Sony</td>
-                                            <td>Empresa 1</td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-2.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>CAPA</td>
-                                            <td>Empresa 1</td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-3.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>Red</td>
-                                            <td>Empresa 1</td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-4.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>APPLE</td>
-                                            <td>Empresa 2</td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-5.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>Hp</td>
-                                            <td>Empresa 2</td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+        <!--Button direccionales fin-->
+        <!-- Producto Detalles Start -->
+        <div class="Stores">
+            <div >
+                <div >
+                    <!-- Inicio Tiendas -->
+                    <div class="container-fluid col-lg-12 sidebar">
+                        <div class="sidebar-widget category row">
+                            <h2 class="title col-12">Nuestras Tiendas</h2>
+                            <div class="col-lg-3 col-md-6 MyTiendas">
+                                <a href="#" onclick="MyStores(1)">
+                                    <img src="img/tiendas Fisicas.png"  alt="" style="width: 100%;">
+                                    <h3>Tiendas Físicas</h3>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 MyTiendas">
+                                <a href="#" onclick="MyStores(2)">
+                                    <img src="img/empresas.jpg" alt="" style="width: 100%; border-radius: 50%;margin-top: 10px;height: 86%;">
+                                    <h3>Empresas</h3>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 MyTiendas">
+                                <a href="#" onclick="MyStores(3)">
+                                    <img src="img/tiendas-online.jpg" alt="" style="width: 100%;height: 85%;border-radius: 50%;margin-top: 10px;">
+                                    <h3>Tienda En línea</h3>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 MyTiendas">
+                                <a href="#" onclick="MyStores(4)">
+                                    <img src="img/fabricas.jpg" alt="" style="width: 100%;height: 85%;border-radius: 50%;margin-top: 10px;">
+                                    <h3>Fabricante</h3>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="cart-page-inner">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="coupon">
-                                        <input type="text" placeholder="Codigo de cupón">
-                                        <button>Aplicar Codigo</button>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="cart-summary">
-                                        <div class="cart-content">
-                                            <h1>Resumen Compra</h1>
-                                            <h1>Individual</h1>
-                                            <p>Sub Total<span>$99</span></p>
-                                            <p>Costo de envío<span>$20</span></p>
-                                            <h2>Total<span>$119</span></h2>
-                                        </div>
-                                        <div class="cart-btn">
-                                            <button><i class="fa fa-clock-o"></i> Update Carrito</button>
-                                            <button><i class="fa fa-shopping-bag"></i> Realizar Compras</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Side Bar End -->
                 </div>
             </div>
-        </div>
-        <!-- CarritoEnd -->
+        </div-->
+        <!-- Producto Detalles End -->
+        
         
         <!-- Footer Start -->
         <div class="footer">
