@@ -101,7 +101,6 @@ $(document).ready(function() {
         });
     }
     //Ver que tienda es
-    
     if(URLactual=='/MyTienda%20Edwin/otherWebsite/ecommerce/Stores-Contents.html'){
         var TypeStores = sessionStorage.getItem("TypeStore"); 
         if(TypeStores==1){
