@@ -8,7 +8,7 @@
         <meta content="eCommerce HTML Template Free Download" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/icon/icons8-motor-de-papel-tapiz-64.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -58,6 +58,9 @@
                             <a href="product-list.html" class="nav-item nav-link">Productos</a>
                             <a href="product-detail.html" class="nav-item nav-link">Producto Detalles</a>
                             <a href="cart.html" class="nav-item nav-link active">Carrito</a>
+                            <!--Solo para administrador-->
+                            <a href="my-Stores.html" id="IDStoresHtml" class="nav-item nav-link">MiS Tiendas</a>
+                            <!--HAsta aqui-->
                             <a href="checkout.html" class="nav-item nav-link">Pagos</a>
                             <a href="my-account.html" class="nav-item nav-link">Mi Cuenta</a>
                             <div class="nav-item dropdown">
@@ -73,9 +76,9 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Registar</a>
-                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user-plus" aria-hidden="true"></i>Registar</a>
+                                    <a href="#" onclick="cerrarsesion()" class="dropdown-item"><i class="fa fa-chevron-left" aria-hidden="true"></i>Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +139,7 @@
             <div class="row">
                 <div class="col-lg-8 row" style="padding-right: 0px;">
                     <div class="product-price col-md-4 col-sm-12 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
-                        <a class="btn" id="ProductUp" href="#" tabindex="-1"><i class="fa fa-cube"></i> Crear Paquete</a>
+                        <!--a class="btn" id="ProductUp" href="#" tabindex="-1"><i class="fa fa-cube"></i> Crear Paquete</a-->
                     </div>
                 </div>
                 <div class="col-lg-4 row" style="padding-right: 0px;">
@@ -147,7 +150,7 @@
             </div>
         </div>
         <!--Crear paquetes fin-->
-        <div class="container-fluid">
+        <!--div class="container-fluid">
             <div class="row" style=" margin-left: 0px; padding-left: 15px; margin-right: 0px;">
                 <div class="col-lg-8 row" style="padding: 12px ; background-color: white;">
                     <div class="col-md-4">
@@ -189,14 +192,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
         <!-- Paquetes Start -->
         <div class="cart-page">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="cart-page-inner">
-                            <div class="table-responsive">
+                            <!--div class="table-responsive" style="height: 400px; overflow: auto;">
                                 <table class="table table-bordered">
                                     <thead class="thead-dark">
                                         <tr>
@@ -205,6 +208,7 @@
                                             <th>Productos Cantidad</th>
                                             <th>Total</th>
                                             <th>Remover</th>
+                                            <th>Ver Detalles </th>
                                         </tr>
                                     </thead>
                                     <tbody class="align-middle">
@@ -214,6 +218,7 @@
                                             <td>3</td>
                                             <td>$ 297.00</td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">View</button></a></td>
                                         </tr>
                                         <tr>
                                             <td>Paquete 2</td>
@@ -221,62 +226,75 @@
                                             <td>2</td>
                                             <td>$ 1,198.00</td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">View</button></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                            </div-->
                             <h4 style=" font-family: 'Open Sans', sans-serif; text-align: end; color: #9144EA; margin-right: 40px; margin-top: 8px; font-weight: 600;">Detalles Paquetes</h4>
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="height: 800px; overflow: auto;">
                                 <table class="table table-bordered">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>Nombre paquetes</th>
-                                            <th>Empresa</th>
-                                            <th>Productos</th>
-                                            <th>Fabricate</th>
-                                            <th>Precio</th>
+                                            <th>Nombre Productos</th>
+                                            <th>Fabricante</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio envio</th>
+                                            <th>Estado de cobro</th>
+                                            <th>Rastreo paquetes</th>
+                                            <th>Pagar</th>
                                             <th>Remover</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="align-middle">
+                                    <tbody class="align-middle" id="ProductPackageList">
                                         <tr>
-                                            <td>Paquete 1</td>
-                                            <td>Empresa 1</td>
                                             <td>Camara</td>
                                             <td>Sony</td>
-                                            <td>$99</td>
+                                            <td>2</td>
+                                            <td>$5.99</td>
+                                            <td>Pagado</td>
+                                            <td>enviado</td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td>Paquete 1</td>
-                                            <td>Empresa 1</td>
                                             <td>CAPA</td>
                                             <td>REdPrint</td>
-                                            <td>$99</td>
+                                            <td>1</td>
+                                            <td>$5.99</td>
+                                            <td>Pagado</td>
+                                            <td>Entregado</td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td>Paquete 1</td>
-                                            <td>Empresa 1</td>
                                             <td>Red</td>
                                             <td>Red</td>
-                                            <td>$99</td>
+                                            <td>1</td>
+                                            <td>$5.99</td>
+                                            <td>Pagado</td>
+                                            <td>enviado</td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td>Paquete 2</td>
-                                            <td>Empresa 2</td>
                                             <td>APPLE</td>
                                             <td>IPhone X</td>
-                                            <td>$699</td>
+                                            <td>1</td>
+                                            <td>$10</td>
+                                            <td>Pagado</td>
+                                            <td>enviado</td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
                                         </tr>
                                         <tr>
-                                            <td>Paquete 2</td>
-                                            <td>Empresa 2</td>
                                             <td>Hp</td>
                                             <td>Asus</td>
-                                            <td>$499</td>
+                                            <td>1</td>
+                                            <td>$15</td>
+                                            <td>Pendiente</td>
+                                            <td>Almacen</td>
+                                            <td><a href=""><button class="btn" wfd-id="94" style=" width: auto; height: auto; ">Pagar YA</button></a></td>
                                             <td><button><i class="fa fa-trash"></i></button></td>
                                         </tr>
                                     </tbody>
@@ -285,13 +303,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="cart-page-inner">
+                        <div class="cart-page-inner" style=" height: 904px;">
                             <div class="row">
                                 <div class="col-md-12">
                                     <select class="form-select" id="CategoryProduct" aria-label="Default select example" style=" margin-left: 0px;">
-                                        <option >Paquetes</option>
-                                        <option selected value="1">Paquetes 1</option>
-                                        <option value="2">Paquetes 2</option>
+                                        <option selected>Seleccione el Producto</option>
+                                        <option value="1">Producto 1</option>
+                                        <option value="2">Producto 2</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12">
@@ -303,15 +321,15 @@
                                 <div class="col-md-12">
                                     <div class="cart-summary">
                                         <div class="cart-content">
-                                            <h1>Resumen Compra</h1>
-                                            <h1>por paquetes</h1>
-                                            <p>Sub Total<span>$69</span></p>
-                                            <p>Costo de envío<span>$1</span></p>
-                                            <h2>Total<span>$70</span></h2>
+                                            <h1>Resumen Compra Para</h1>
+                                            <h1>Productos Por Paquetes </h1>
+                                            <p>Costo Producto<span style="text-decoration: line-through;">$69</span></p>
+                                            <p>Costo de envío<span>$0.00</span></p>
+                                            <h2>Total<span>$0.00</span></h2>
                                         </div>
                                         <div class="cart-btn">
                                             <button><i class="fa fa-clock-o"></i> Update Carrito</button>
-                                            <button><i class="fa fa-shopping-bag"></i> Realizar Compra</button>
+                                            <button onclick="UpPackageProduct()"><i class="fa fa-shopping-bag"></i> Realizar Compra</button>
                                         </div>
                                     </div>
                                 </div>

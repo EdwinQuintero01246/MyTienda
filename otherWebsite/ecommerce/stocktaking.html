@@ -8,7 +8,7 @@
         <meta content="eCommerce HTML Template Free Download" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/icon/icons8-motor-de-papel-tapiz-64.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -55,6 +55,9 @@
                             <a href="product-list.html" class="nav-item nav-link">Productos</a>
                             <a href="product-detail.html" class="nav-item nav-link active">Producto Detalles</a>
                             <a href="cart.html" class="nav-item nav-link">Carrito</a>
+                            <!--Solo para administrador-->
+                            <a href="my-Stores.html" id="IDStoresHtml" class="nav-item nav-link">MiS Tiendas</a>
+                            <!--HAsta aqui-->
                             <a href="checkout.html" class="nav-item nav-link">Pagos</a>
                             <a href="my-account.html" class="nav-item nav-link">Mi Cuenta</a>
                             <div class="nav-item dropdown">
@@ -70,9 +73,9 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Registar</a>
-                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user-plus" aria-hidden="true"></i>Registar</a>
+                                    <a href="#" onclick="cerrarsesion()" class="dropdown-item"><i class="fa fa-chevron-left" aria-hidden="true"></i>Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +126,7 @@
                     <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                     <li class="breadcrumb-item"><a href="product-list.html">Productos</a></li>
                     <li class="breadcrumb-item"><a href="product-detail.html">Producto Detalles</a></li>
-                    <li class="breadcrumb-item active">Inventario</li>
+                    <li class="breadcrumb-item active">Almacén</li>
                 </ul>
             </div>
         </div>
@@ -149,13 +152,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -169,7 +165,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -178,13 +173,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -198,7 +186,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -207,13 +194,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -227,7 +207,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -236,13 +215,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -256,7 +228,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -265,13 +236,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -285,7 +249,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -294,13 +257,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -314,7 +270,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -323,13 +278,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -343,7 +291,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -352,13 +299,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -372,7 +312,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -381,13 +320,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -401,7 +333,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -410,13 +341,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -430,7 +354,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -439,13 +362,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -459,7 +375,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -468,13 +383,6 @@
                                         <div class="product-title">
                                             <a href="#">Product Name</a>
                                             <span class="FabricanteStyle">(Fabricante)</span>
-                                            <div class="ratting">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
@@ -488,7 +396,6 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>$</span>99</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Compra ahora</a>
                                         </div>
                                     </div>
                                 </div>

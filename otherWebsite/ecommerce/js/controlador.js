@@ -1,5 +1,99 @@
 //para iniciar datos u objetos cuando se recarga la pagina
 $(document).ready(function() {
+    //Interractidad pagian de Store contenido
+    var URLactual = window.location.pathname;
+    if(URLactual=='/MyTienda%20Edwin/otherWebsite/ecommerce/Stores-Contents.html'){
+        var TypeStores = sessionStorage.getItem("TypeStore"); 
+        if(TypeStores==1){
+            $('#AddressStoreContents').append($(`<li class="breadcrumb-item active">Tiendas Físicas</li>`));
+            $('#StoresConteTiendaTitle').html($(`
+                <h2 class="title col-4">Tienda Numero #</h2>
+                <div class="dropdown col-3" wfd-id="140">
+                    <div class="dropdown-toggle2" data-toggle="dropdown" style=" margin-bottom: 12px; " wfd-id="142">seleccione la tienda</div>
+                    <div class="dropdown-menu dropdown-menu-right" wfd-id="141">
+                        <a href="#1" class="dropdown-item">Tienda # 1</a>
+                        <a href="#2" class="dropdown-item">Tienda # 2</a>
+                        <a href="#3" class="dropdown-item">Tienda # 3</a>
+                    </div>
+                </div>
+            `));
+            $('#StoresConteTiendaBuy').html($(`
+                <h2 class="col-12">Compras</h2>
+                <input class="col-lg-3 form-control" type="text" name="" id="" placeholder="Nombre Producto">
+                <input class="col-lg-3 form-control" type="text" name="" id="" placeholder="Fabricante">
+                <input class="col-lg-2 form-control" type="number" name="" id="" placeholder="Precio" disabled>
+                <input class="col-lg-2 form-control" type="number" name="" id="" placeholder="Cantidad">
+                <button class="col-lg-2 btn12">Generar Compra</button>
+            `));
+            $('#DetailStoresConteTiendaBuy').html($(`
+                <table class="table table-bordered col-lg-12">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre Productos</th>
+                            <th>Fabricante</th>
+                            <th>Cantidad existencia</th>
+                            <th>Precio de venta</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle" id="ProductShoreHouseBUY">
+                        
+                    </tbody>
+                </table>
+            `));
+        };
+        if(TypeStores==2){
+            $('#AddressStoreContents').append($(`<li class="breadcrumb-item active">Empresas</li>`))
+            document.getElementById('DetailStoresConteTiendaBuy').style.display = "none";
+        };
+        if(TypeStores==3){
+            $('#AddressStoreContents').append($(`<li class="breadcrumb-item active">Tiendas En Línea</li>`))
+            document.getElementById('DetailStoresConteTiendaBuy').style.display = "none";
+        };
+        if(TypeStores==4){
+            $('#AddressStoreContents').append($(`<li class="breadcrumb-item active">Fabricantes</li>`))
+            document.getElementById('DetailStoresConteTiendaBuy').style.display = "none";
+        };
+        if(TypeStores==1 || TypeStores ==2 || TypeStores ==3){
+        $('#DetailStoresStoreHouse').html($(`
+            <h2 class="col-12">Inventario</h2>
+            <table class="table table-bordered col-lg-12">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre Productos</th>
+                        <th>Fabricante</th>
+                        <th>Cantidad existencia</th>
+                        <th>Precio de venta</th>
+                        <th>Pedido</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle" id="ProductShoreHouseProduct">
+                    
+                </tbody>
+            </table>
+        `));
+        };
+        if(TypeStores==4){
+            $('#DetailStoresStoreHouse').html($(`
+                <h2 class="col-12">Mi Almacen</h2>
+                <table class="table table-bordered col-lg-12">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre Productos</th>
+                            <th>Fabricante</th>
+                            <th>Cantidad existencia</th>
+                            <th>Precio de venta</th>
+                            <th>Pedido</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle" id="ProductShoreHouseProduct">
+                        
+                    </tbody>
+                </table>
+            `));
+        };     
+    };
+
+
 })
 //funcion interactiva de newProducto cuando se realize algun cambio esto esta en nuevo producto, con un onchange()
 function CambioDatosNewProduct(){
@@ -20,7 +114,7 @@ function CambioDatosNewProduct(){
 function CambioDatosNewProductEsp(){
     //ver como se mira la especificación de este producto
     $('#SpecificProduct').append($(`<li>${$('#EspProduct').val()}</li>`));
-    $('#EspProduct').val('');
+    //$('#EspProduct').val('');
 }
 
 //funcion el que realiza las talla de este producto, el cual habilita o deshabilita cada una 
@@ -129,16 +223,16 @@ checkbox.addEventListener( 'change', function() {
     if(this.checked) {
         //si esta precionado realiza esta opción
        $('#DLInput').html($(`
-            <label>Descuento</label>
-            <input id="DesProduct" class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Descuento">
+            <label>Precio Anterior</label>
+            <input id="DesProduct" class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Precio Anterior">
        `));
        
     $('#PrecioProducto').html($(`<p id="PrecioProducto">${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
     $('#DescuentoProducto').html($(`<span id="DescuentoProducto">$ ${$('#DesProduct').val()}</span>`));
     }else{
         $('#DLInput').html($(`
-            <label>Descuento</label>
-            <input id="DesProduct" disabled class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Descuento">
+            <label>Precio Anterior</label>
+            <input id="DesProduct" disabled class="form-control" onchange="CambioDatosNewProduct()" type="number" placeholder="Precio Anterior">
        `));
     }
 });
@@ -309,5 +403,30 @@ function DatosPago(x){
     }
 }
 
+//
+function ValidarReGex(){
+    console.log('entro');
+    //console.log($('#login').val());
+    //console.log($('#password').val());
+}
+
+
+const login = document.querySelector('#login');
+const password = document.querySelector('#password');
+
+//const regex = /[A-zA-Z0-9]\_\-\@\[a-zA-Z]\.\[a-zA-Z]{4,50}/g;
+var loginX = document.getElementById('login');
+loginX.addEventListener('change', e =>{
+    
+    const regex = /[0-9]{3}/g;
+    const validationLogin = login.Value.match(regex);
+    console.log(validationLogin);
+});
+//const formulario = document.getElementById('formulario');
+//const inputs = document.querySelectorAll('#formulario input');
+
 
 //querySelector('input[name="horario"]:checked')
+
+
+

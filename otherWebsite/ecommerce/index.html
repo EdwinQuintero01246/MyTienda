@@ -8,7 +8,7 @@
         <meta content="eCommerce HTML Template Free Download" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/icon/icons8-motor-de-papel-tapiz-64.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -58,6 +58,9 @@
                             <a href="product-list.html" class="nav-item nav-link">Productos</a>
                             <a href="product-detail.html" class="nav-item nav-link">Producto Detalles</a>
                             <a href="cart.html" class="nav-item nav-link">Carrito</a>
+                            <!--Solo para administrador-->
+                            <a href="my-Stores.html" id="IDStoresHtml" class="nav-item nav-link">MiS Tiendas</a>
+                            <!--HAsta aqui-->
                             <a href="checkout.html" class="nav-item nav-link">Pagos</a>
                             <a href="my-account.html" class="nav-item nav-link">Mi Cuenta</a>
                             <div class="nav-item dropdown">
@@ -73,9 +76,9 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Registar</a>
-                                    <a href="../../index.html" class="dropdown-item">Cerrar Sesión</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                                    <a href="#" class="dropdown-item"><i class="fa fa-user-plus" aria-hidden="true"></i>Registar</a>
+                                    <a href="#" onclick="cerrarsesion()" class="dropdown-item"><i class="fa fa-chevron-left" aria-hidden="true"></i>Cerrar Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -127,28 +130,34 @@
                         <nav class="navbar bg-light">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Hogar</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Más Vendidos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Más Vendidos</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-laptop"></i>Computadoras & Accesorios</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>Recientes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-female"></i>Moda & Belleza</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-print"></i>Impresoras & Escaneres</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-child"></i>Ropa de Niños &  bebé</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-camera"></i>Cámaras & Fotografïa</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Ropa de Mujer & Hombre</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-televisión"></i>Televisión & Video</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accesorios</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-headphones"></i>Gadgets & Accesorios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronica & Accesorios</a>
+                                    <a class="nav-link" href="#"><i class="fa fa-mobile"></i>Telefonos celulares, Tablet & Accesorios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-gamepad"></i>Consolas de videojuegos & Accesorios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Componentes Externos & Internos del Ordenador</a>
                                 </li>
                             </ul>
                         </nav>
@@ -339,13 +348,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Vestio Dama Negro</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -367,13 +369,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Vestido Tradicional</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -395,13 +390,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Vestido escote</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -423,13 +411,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Blusa Navy</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -451,13 +432,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Prendas Hombre</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -509,13 +483,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Jeans American Eagle</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -537,13 +504,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Bata de dormir Beaty Secret</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -565,13 +525,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Blusa</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -593,13 +546,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Camisa</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -621,13 +567,6 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Vestido Blanco</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -661,14 +600,7 @@
                             </div>
                             <div class="review-text">
                                 <h2>Stephany Clarion</h2>
-                                <h3>Emprededora Estrella</h3>
-                                <div class="ratting2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                                <h3>Vendedora Estrella</h3>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
                                 </p>
@@ -683,13 +615,6 @@
                             <div class="review-text">
                                 <h2>Mario Balotelli</h2>
                                 <h3>Ingniero/vendedor IPhone</h3>
-                                <div class="ratting2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
                                 </p>
@@ -703,14 +628,8 @@
                             </div>
                             <div class="review-text">
                                 <h2>Sasha Marriott</h2>
-                                <h3>Modista</h3>
+                                <h3>Vendedora Regional</h3>
                                 <div class="ratting2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
                                 </p>
