@@ -90,6 +90,13 @@ $(document).ready(function() {
                     </tbody>
                 </table>
             `));
+            $('#OrderProducerStoresCont').html($(`
+                <h2 class="col-lg-12">Pedido Fabricante</h2>
+                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Nombre Producto">
+                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Fabricante">
+                <input class="col-lg-3 form-control" type="number" name="" id="" placeholder="Cantidad">
+                <button class="col-lg-9 btn12">Generar Pedido</button>
+        `));
         };     
     };
 
