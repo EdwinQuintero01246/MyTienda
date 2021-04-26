@@ -99,7 +99,6 @@ $(document).ready(function() {
                     <span class="FabricanteStyle2">${resp[0].Name_product}</span>
                 `));
                 if( resp[0]['Discount']==null){
-                    console.log("entro");
                     Price  = resp[0]['Price'];
                     $('#ProductDetail-contend-price').html($(`
                         <h4>Price:</h4>
@@ -641,6 +640,21 @@ function LLenarCompras(){
             data:{ Proceso : 'invoices',IDCliente : ID_USER},
             success: function(resp){
                 console.log('data-------------->',resp)
+                var Totals = 0;
+                for(var i=0;i<resp.length;i++){
+                    Totals = Totals + (resp[i]['Price']*resp[i]['Quantity']);
+                    $('#COntentBuysList').append($(`
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${resp[i].name_product}</td>
+                            <td></td>
+                            <td>$${resp[i].Price}</td>
+                            <td>${resp[i].Quantity}</td>
+                        </tr>
+                    `));
+                };
+                console.log(Totals);
+                $('#TotalBuyslist').append($(`<span>${Totals}</span>`));
             }
         });
 }
@@ -866,30 +880,30 @@ function habilitartextUserpermiso(X){
     console.log(X);
     document.getElementById("Text_"+X).disabled = false;
 }
-
+var NumberCarts , cuentaCarts;
 function BuyNow(Id,Price){
     //Payment-BuyNow
     $('#Payment-BuyNow').html(`
         <h4>Métodos de pago</h4>
-            <div class="payment-methodH">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" onclick="DatosPago(11)" id="payment-1" name="payment">
-                    <label class="custom-control-label" for="payment-1"><i class="fa fa-credit-card"></i> Paypal</label>
-                </div>
-                <div id="contentPaymet-1">
-                <!--Contenido de paypal--> 
-                </div>
+        <div class="payment-methodH">
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" onclick="DatosPago(11)" id="payment-1" name="payment">
+                <label class="custom-control-label" for="payment-1"><i class="fa fa-credit-card"></i> Paypal</label>
             </div>
-            <div class="payment-methodH">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" onclick="DatosPago(22)" id="payment-3" name="payment">
-                    <label class="custom-control-label" for="payment-3"><i class="fa fa-shopping-basket"></i> Pago con Cuenta</label>
-                </div>
-                <div class="payment-contentH" id="payment-3-show">
-                    <!--Contenido de Cuentas empresas-->
-                    
-                </div>
-            </div> 
+            <div id="contentPaymet-1">
+            <!--Contenido de paypal--> 
+            </div>
+        </div>
+        <div class="payment-methodH">
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" onclick="DatosPago(22)" id="payment-3" name="payment">
+                <label class="custom-control-label" for="payment-3"><i class="fa fa-shopping-basket"></i> Pago con Cuenta</label>
+            </div>
+            <div class="payment-contentH" id="payment-3-show">
+                <!--Contenido de Cuentas empresas-->
+                
+            </div>
+        </div> 
     `);
     var ID_user = localStorage.getItem('IDUser');
     ID_user = parseFloat(ID_user);
@@ -905,19 +919,23 @@ function BuyNow(Id,Price){
     if(methodPayment==0 || methodPayment==undefined){
         alert("seleccione un metodo de pago");
     }else{
-    Productos = {'Proceso': 'PayProduct','IdUser': ID_user,'Payment':methodPayment, "ObjectsJson": Productos22,'Total': TotalProduct};
-    console.log(Productos);
-    $.ajax({
-        url: '../ecommerce/ajax/php_intermediate.php?acción=PayProduct',
-        method:"POST",
-        data:Productos,
-        //dataType: 'json',
-        success:function(respuesta){
-            console.log(respuesta);
-            alert("compra exitosa");
-            //window.location.assign("index.html");
-        }
-    });
+        Productos = {'Proceso': 'PayProduct','IdUser': ID_user,'Payment':methodPayment, "ObjectsJson": Productos22,'Total': TotalProduct};
+        if( NumberCarts=='XXXX-XXXX-XXXX-XXXX' || cuentaCarts=='ejem: 123456789'){
+            alert("agregue una tarjeta antes a su forma de pagos");
+        }else{
+            $.ajax({
+                url: '../ecommerce/ajax/php_intermediate.php?acción=PayProduct',
+                method:"POST",
+                data:Productos,
+                //dataType: 'json',
+                success:function(respuesta){
+                    console.log(respuesta);
+                    alert("compra exitosa");
+                    window.location.assign("index.html");
+                }
+            });
+        };
+
     };
 }
 function PaymentCardSend(){

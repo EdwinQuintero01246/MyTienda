@@ -80,7 +80,16 @@ def get_account_invoice_line(Customer_id):
     purchase = SQLEngine.select("SELECT Account_invoice_line.Quantity,Account_invoice.Sequence_name,Account_invoice_line.Price,Product.name_product FROM Account_invoice_line INNER JOIN Account_invoice ON Account_invoice_line.Account_id = Account_invoice.Id INNER JOIN Product ON Account_invoice_line.Product_id = Product.Id WHERE Account_invoice.Customer_id = %s;"%(int(Customer_id)))
     var = json.dumps(purchase)
     return var
-print(get_account_invoice_line(1))
+def get_Paypal(Customer_id):
+    paypal = SQLEngine.select("SELECT Paypal_tarjet.Number_tarjet, Paypal_tarjet.Ccv, Paypal_tarjet.Mm, Paypal_tarjet.Yy, Paypal_tarjet.Name_tarjet FROM Payment INNER JOIN Paypal_tarjet on Payment.Paypal_tarjet_id = Paypal_tarjet.Id  WHERE Payment.Customer_id = %s;"%(int(Customer_id)))
+    var = json.dumps(paypal)
+    return var
+def get_BuyBank(Customer_id):
+    paypal = SQLEngine.select("SELECT Payment.Number_bank FROM Payment WHERE  Customer_id = %s and Type_Payment = 'Cuenta bancaria';"%(int(Customer_id)))
+    var = json.dumps(paypal)
+    return var
+
+#print(get_account_invoice_line(1))
 if sys.argv[1] == 'Login':
     print(validate_login(sys.argv[2],sys.argv[3]))
 if sys.argv[1] == 'ListProd':
@@ -113,3 +122,7 @@ if sys.argv[1] == 'set_payment_bank':
     print(set_payment_bank(sys.argv[2],sys.argv[3],sys.argv[4]))
 if sys.argv[1] == 'invoices':
     print(get_account_invoice_line(sys.argv[2]))
+if sys.argv[1] == 'GetPaypal':
+    print(get_Paypal(sys.argv[2]))
+if sys.argv[1] == 'GetBuyBank':
+    print(get_BuyBank(sys.argv[2]))

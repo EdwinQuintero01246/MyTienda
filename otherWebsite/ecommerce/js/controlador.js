@@ -330,6 +330,22 @@ function DatosPago(x){
             <!--Formulario tarjeta de credito fin-->
         </div>
         `));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetPaypal','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetPaypal',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                //console.log(respuesta);
+                $('#NumberCart').val(respuesta[0]['Number_tarjet']);
+                $('#MMCart').val(respuesta[0]['Mm']);
+                $('#YYCart').val(respuesta[0]['Yy']);
+                $('#NameCart').val(respuesta[0]['Name_tarjet']);
+                $('#CCVCart').val(respuesta[0]['Ccv']);
+            }
+        }); 
     }if (XX==2){
         //si es dos se realiza el metodo de pago cuenta con la empresa
         $('#contentPaymet-1').html($(``));
@@ -341,31 +357,28 @@ function DatosPago(x){
                         <div class="col-12 Transferencia-banner">
                             <p>Facturas Por Numero De Cuentas</p>
                         </div>
-                        <div class="col-4 TextTranfer Pad">
-                            <p>Empresa</p>
-                        </div>
-                        <div class="col-8 Pad">
-                            <input type="text" class="col-10" name="" id="BuscarEmpresa" onchange="BuscarEmpresa()" placeholder="Buscar Empresa">
-                        </div>
-                        <div class="col-4 TextTranfer">
-                        <p>Usuario</p> 
-                        </div>
-                        <div class="col-8">
-                            <input type="text" class="col-10" name="" id="" disabled placeholder="Edwin Quintero">
-                        </div>
                         <div class="col-4 TextTranfer">
                             <p>Numero de cuenta a facturar</p>
                         </div>
                         <div class="col-8">
-                            <input type="text" class="col-10" name="" id="cuenta" placeholder="ejem: 123456789">
-                        </div>
-                        <div class="col-12" style="text-align: center;padding-bottom: 12px;">
-                            <input type="button" class="btn" value="Enviar">
+                            <input type="text" class="col-10" name="" id="cuentaCarts" disabled Value="ejem: 123456789">
                         </div>
                     </div>
                 </div>
             </div>`
         ));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetBuyBank','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetBuyBank',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                //console.log(respuesta);
+                $('#cuentaCarts').val(respuesta[0]['Number_bank']);
+            }
+        });
     }if (XX==3){
         //si es tres se realiza el metodo de pago por tranferencia bancaria
         $('#contentPaymet-1').html($(``));
@@ -422,7 +435,7 @@ function DatosPago(x){
                     <div class="panel-heading">
                         <div class="row ">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" disabled placeholder="XXXX-XXXX-XXXX-8979" />
+                                <input type="text" id="NumberCart" class="form-control" disabled value="XXXX-XXXX-XXXX-XXXX" />
                             </div>
                         </div>
                     </div>
@@ -431,6 +444,22 @@ function DatosPago(x){
             <!--Formulario tarjeta de credito fin-->
         </div>
         `));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetPaypal','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetPaypal',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                NumberCarts = $('#NumberCart').val();
+                if(respuesta.length==0){
+                }else{
+                    $('#NumberCart').val(respuesta[0]['Number_tarjet']);
+                    //console.log($('#NumberCart').val());
+                }
+            }
+        });
     }if (XX==22){
         methodPayment = 2;
         //si es dos se realiza el metodo de pago cuenta con la empresa
@@ -441,12 +470,29 @@ function DatosPago(x){
                 <div class="row">
                     <div class="row col-12 Transferencia-dou">
                         <div class="col-8">
-                            <input type="text" class="col-10" name="" id="cuenta" disabled placeholder="ejem: 123456789">
+                            <input type="text" class="col-10" name="" id="cuentaCarts" disabled Value="ejem: 123456789">
                         </div>
                     </div>
                 </div>
             </div>`
         ));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetBuyBank','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetBuyBank',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                cuentaCarts = $('#cuentaCarts').val();
+                //console.log(cuentaCarts);
+                if(respuesta.length==0){
+                }else{
+                    $('#cuentaCarts').val(respuesta[0]['Number_bank']);
+                    //console.log($('#cuentaCarts').val());
+                }
+            }
+        });
     }
 }
 

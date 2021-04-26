@@ -136,6 +136,18 @@
       exec("python main.py $arg $arg2 $arg3 $arg4", $return);
       echo $return[0];
     break;
+    case 'GetPaypal':
+      $arg = $_POST['Proceso'];
+      $arg2 = $_POST['IdUser'];
+      exec("python main.py $arg $arg2 ", $return);
+      echo $return[0];
+    break;
+    case 'GetBuyBank':
+      $arg = $_POST['Proceso'];
+      $arg2 = $_POST['IdUser'];
+      exec("python main.py $arg $arg2 ", $return);
+      echo $return[0];
+    break;
   };//RegisterBank
 ?>
 
