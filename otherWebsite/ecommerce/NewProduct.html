@@ -272,10 +272,13 @@
                                 <label>Nombre Producto</label>
                                 <input id="NameProduct" onchange="CambioDatosNewProduct()" class="form-control" type="text" placeholder="Nombre Producto">
                             </div>
-                            <div class="col-md-12">
+                            <!--div class="col-md-12">
                                 <label>Fabricante</label>
                                 <input id="FabricanteNewProduct" onchange="CambioDatosNewProduct()" class="form-control" type="text" placeholder="Nombre Fabricante">
-                            </div>
+                            </div-->
+                            <select class="form-select" onchange="CambioDatosNewProduct()" id="FabricanteNewProduct-select" aria-label="Default select example">
+                                <option selected>Fabricante</option>
+                            </select>
                             <div class="col-md-6">
                                 <label>Precio</label>
                                 <input class="form-control" onchange="CambioDatosNewProduct()" type="number" id="PriceProduct" placeholder="Precio">
@@ -304,16 +307,6 @@
                             </div>
                             <select class="form-select" id="CategoryProduct" aria-label="Default select example">
                                 <option selected>Categorias</option>
-                                <option value="1">Hogar & Cocina</option>
-                                <option value="2">Moda & Belleza</option>
-                                <option value="3">Ropa De Niños &  bebé</option>
-                                <option value="4">Ropa De Mujer & Hombre</option>
-                                <option value="5">Gadgets & Accesorios</option>
-                                <option value="6">Electronica & Accesorios</option>
-                                <option value="7">Deportes</option>
-                                <option value="8">Autos & Accesorios</option>
-                                <option value="9">Juguetes & Juegos</option>
-                                <option value="10">Libros</option>
                             </select>
                             <div class="product-content" style="padding: 0px 12px 0px 12px;">
                                 <div class="p-size">

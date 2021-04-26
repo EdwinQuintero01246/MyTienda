@@ -1,8 +1,35 @@
-from MySQLEngine import *
-import configparser
-SQLEngine = MySQLEngine()
-SQLEngine.start()
+# Python code to demonstrate
+# converting string to json 
+# using json.loads
 import json
+  
+##### inititialising json object
+ini_string = {'nikhil': 1, 'akash' : 5, 
+              'manjeet' : 10, 'akshat' : 15}
+####  
+##### printing initial json
+####ini_string = json.dumps(ini_string)
+####print ("initial 1st dictionary", ini_string)
+####print ("type of ini_object", type(ini_string))
+####  
+##### converting string to json
+####final_dictionary = json.loads(ini_string)
+####  
+##### printing final result
+####print ("final dictionary", str(final_dictionary))
+####print ("type of final_dictionary", type(final_dictionary))
+
+ini_string =[{IDUser:1,IDCarts:1,NameProduct:Laptop inspiron 15,Producer:DELL,Price:1000,Quantity:3},{IDUser:1,IDCarts:2,NameProduct:P30 lite,Producer:HUAWEI,Price:200,Quantity:2},{IDUser:1,IDCarts:1,NameProduct:Camara,Producer:Canon,Price:300.0,Quantity:1},{IDUser:1,IDCarts:1,NameProduct:Camara,Producer:Canon,Price:300.0,Quantity:1}]
+
+print(ini_string)
+
+
+
+####from MySQLEngine import *
+####import configparser
+####SQLEngine = MySQLEngine()
+####SQLEngine.start()
+####import json
 
 #import time
 
@@ -71,15 +98,15 @@ def UpProductNew(Name, Producer, Price, Discount, Quantity, Category, Descriptio
     Phy_Description = Description
     Phy_Specification = Specification
     return json.dumps("Subir producto nuevo")
-
+def ShoresBuyList(IdCliente,IdShores):
+    print("LLenado de compras ")
+def ShoresStocktakingList(IdCliente,IdShores):
+    print("LLenado de inventario ")
 
 
 
 if sys.argv[1] == 'Login':
-    if sys.argv[2] == 'EdwinQuintero01246' and sys.argv[3] == '1234':
-        print( contraseñaExi(sys.argv[2]) )
-    if sys.argv[2] != 'EdwinQuintero01246' or sys.argv[3] != '1234':
-        print( contraseñaFall(sys.argv[2]) )
+    print( contraseñaFall(sys.argv[2]))
 
 #print (len(sys.argv),sys.argv)
 
@@ -102,6 +129,10 @@ if sys.argv[1] == 'PayPackageProducts':
     print(PayPackageProduct(sys.argv[2]))
 if sys.argv[1] == 'UpProduct':
     print( UpProductNew(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7],sys.argv[8],sys.argv[9]))
+if sys.argv[1] == 'ShoresBuyList':
+    print( ShoresBuyList(sys.argv[2],sys.argv[3]))
+if sys.argv[1] == 'ShoresStocktakingList':
+    print( ShoresStocktakingList(sys.argv[2],sys.argv[3]))
 
 
 

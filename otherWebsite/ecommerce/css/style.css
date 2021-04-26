@@ -2569,3 +2569,56 @@ h2 {
     background: linear-gradient(to right, #007DD1,#393279);
     color: #f0f0f0;
 }
+#ValidetYesUser{
+    color: #fff;
+    background-color: #184D1B;
+    border-color: #184D1B;
+}
+#ValidetNotUser{
+    margin-left: auto;
+    display: block;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+#ValidetYesUser:hover{
+    background-color: #B4DBB6;
+    border-color: #B4DBB6;
+}
+#ValidetNotUser:hover{
+    background-color: #FFBDBF;
+    border-color: #FFBDBF;
+}
+
+#text-user{
+    width: calc(100% - 135px);
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #999999;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    transition: all .3s;
+}
+
+#text-user:focus{
+    border-color: #FF6F61;
+}
+
+.button-user{
+    height: 40px;
+    padding: 2px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #FF6F61;
+    background: #ffffff;
+    border: 1px solid #FF6F61;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.button-user:hover{
+    color: #ffffff;
+    background: #FF6F61;
+}

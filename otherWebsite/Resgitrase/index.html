@@ -26,6 +26,21 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
+
+
+
+<!-- Favicon -->
+<link href="img/icon/icons8-motor-de-papel-tapiz-64.png" rel="icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+<!-- CSS Libraries -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="../ecommerce/lib/slick/slick.css" rel="stylesheet">
+<link href="../ecommercelib/slick/slick-theme.css" rel="stylesheet">
 </head>
 <body>
 
@@ -56,7 +71,7 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<label class="label-input100" for="name">Nombre Completo</label>
-					<input id="name" class="input100" type="text" name="name" placeholder="Enter your name...">
+					<input id="nameUser" class="input100" type="text" name="name" placeholder="Enter your name...">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -66,27 +81,19 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate = "Password is required">
 					<label class="label-input100" for="password">Contraseña</label>
-					<input id="password" class="input100" type="password" name="password" placeholder="password">
+					<input id="passwordI" onchange="HabilitarPassword()" class="input100" type="password" name="password" placeholder="password">
 					<span class="focus-input100"></span>
+					<a href=""></i></a>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate = "Password is required">
 					<label class="label-input100" for="password">confirme Contraseña</label>
-					<input id="password" class="input100" type="password" name="password" placeholder="password">
+					<input id="passwordII" onchange="HabilitarPassword()" class="input100" type="password" name="password" placeholder="password">
 					<span class="focus-input100"></span>
 				</div>
-				<!--div class="wrap-input100">
-					<div class="label-input100">Necesidades</div>
-					<div>
-						<select class="js-select2" name="service">
-							<option>Please chooses</option>
-							<option>UI/UX Design</option>
-							<option>eCommerce Bussiness</option>
-							<option>Online Services</option>
-						</select>
-						<div class="dropDownSelect2"></div>
-					</div>
-					<span class="focus-input100"></span>
-				</div-->
+				<div>
+					<button id="buttonPassword1" onclick="Passwordvalidet(1)" style=" margin-left: auto; display: block; "><i class="col-2 fa fa-eye"></i></button>
+					<button id="buttonPassword2" onclick="Passwordvalidet(2)" style=" margin-left: auto; display: none; "><i class="col-2 fa fa-eye-slash" aria-hidden="true"></i></button>
+				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Description is required">
 					<label class="label-input100" for="message">Descripción de su perfil</label>
@@ -95,8 +102,8 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						Send
+					<button onclick="SendNewUserNor()" class="contact100-form-btn" id="SendNewUser">
+						Enviar
 					</button>
 				</div>
 
@@ -159,6 +166,8 @@
 	<script src="../../assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="../ecommerce/js/Funcionabilidad.js"></script>
+	<script src="../ecommerce/js/controlador.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 	<script>
