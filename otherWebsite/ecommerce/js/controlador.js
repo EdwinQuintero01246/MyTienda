@@ -269,6 +269,7 @@ checkbox.addEventListener( 'change', function() {
 
 //esta es para habilitar los formas de pagos, ya sea paypal, cuenta o tranferencia de bancos. cuando se realiza el evento de un click
 function DatosPago(x){
+    $('#SelectPay').html($(``));
     var XX=x;
     if (XX==1){
         //si es uno se realiza el metodo de pago Paypal
@@ -457,6 +458,7 @@ function DatosPago(x){
                 }else{
                     $('#NumberCart').val(respuesta[0]['Number_tarjet']);
                     //console.log($('#NumberCart').val());
+                    NumberCarts = $('#NumberCart').val();
                 }
             }
         });
@@ -490,6 +492,7 @@ function DatosPago(x){
                 }else{
                     $('#cuentaCarts').val(respuesta[0]['Number_bank']);
                     //console.log($('#cuentaCarts').val());
+                    cuentaCarts = $('#cuentaCarts').val();
                 }
             }
         });

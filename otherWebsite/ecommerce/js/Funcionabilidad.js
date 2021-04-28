@@ -885,6 +885,9 @@ function BuyNow(Id,Price){
     //Payment-BuyNow
     $('#Payment-BuyNow').html(`
         <h4>Métodos de pago</h4>
+        <div id="SelectPay">
+
+        </div>
         <div class="payment-methodH">
             <div class="custom-control custom-radio">
                 <input type="radio" class="custom-control-input" onclick="DatosPago(11)" id="payment-1" name="payment">
@@ -916,8 +919,12 @@ function BuyNow(Id,Price){
         'IdUser='+ ID_user;
     Productos22[0] = {"id" : Id ,'price': Price,'quantity': Quantity};
     Productos = {'Proceso': 'PayProduct','IdUser': ID_user,'Payment':methodPayment, "ObjectsJson": Productos22,'Total': TotalProduct};
+    
     if(methodPayment==0 || methodPayment==undefined){
-        alert("seleccione un metodo de pago");
+        //alert("seleccione un metodo de pago");
+        $('#SelectPay').html($(`
+            <span style="color: red;">Nota: seleccione un metodo de pago</span>
+        `));
     }else{
         Productos = {'Proceso': 'PayProduct','IdUser': ID_user,'Payment':methodPayment, "ObjectsJson": Productos22,'Total': TotalProduct};
         if( NumberCarts=='XXXX-XXXX-XXXX-XXXX' || cuentaCarts=='ejem: 123456789'){
