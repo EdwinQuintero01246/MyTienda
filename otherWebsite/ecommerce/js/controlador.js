@@ -90,6 +90,13 @@ $(document).ready(function() {
                     </tbody>
                 </table>
             `));
+            $('#OrderProducerStoresCont').html($(`
+                <h2 class="col-lg-12">Pedido Fabricante</h2>
+                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Nombre Producto">
+                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Fabricante">
+                <input class="col-lg-3 form-control" type="number" name="" id="" placeholder="Cantidad">
+                <button class="col-lg-9 btn12">Generar Pedido</button>
+        `));
         };     
     };
 
@@ -100,7 +107,9 @@ function CambioDatosNewProduct(){
     //ver como se mira en nombre del producto 
     $('#NombreProducto').html($(`<h2 id="NombreProducto">${$('#NameProduct').val()}</h2>`));
     //ver como se mira en nombre del fabricante 
-    $('#FabricanteStyle2-1').html($(`<h4 id="FabricanteStyle2-1">${$('#FabricanteNewProduct').val()}</h4>`));
+    var combo = document.getElementById("FabricanteNewProduct-select");
+    var selected = combo.options[combo.selectedIndex].text;
+    $('#FabricanteStyle2-1').html($(`<h4 id="FabricanteStyle2-1">${selected}</h4>`));
     //ver como se mira el precio 
     $('#PrecioProducto').html($(`<p id="PrecioProducto">$${$('#PriceProduct').val()}<span id="DescuentoProducto"></span></p>`));
     //ver como se mira el descuento
@@ -172,7 +181,6 @@ function ProductSize(x){
 //dependiendo el parametro que le hemos enviado
 function ProductColor(x){
     var XX=x;
-    //$('#AddTalla').html($(``));
     if(XX==1){
         $('#AddColor').append($(`<button type="button" class="btn">White</button>`));
         document.getElementById("btn-Color-Blanco").disabled = true;
@@ -261,6 +269,7 @@ checkbox.addEventListener( 'change', function() {
 
 //esta es para habilitar los formas de pagos, ya sea paypal, cuenta o tranferencia de bancos. cuando se realiza el evento de un click
 function DatosPago(x){
+    $('#SelectPay').html($(``));
     var XX=x;
     if (XX==1){
         //si es uno se realiza el metodo de pago Paypal
@@ -274,21 +283,21 @@ function DatosPago(x){
                     <div class="panel-heading">
                         <div class="row ">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Ingrese el número de tarjeta" />
+                                <input type="text" Id="NumberCart" class="form-control" placeholder="Ingrese el número de tarjeta" />
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-md-3 col-sm-3 col-xs-3">
                                 <span class="help-block text-muted small-font" > Mes de venc.</span>
-                                <input type="text" class="form-control" placeholder="MM" />
+                                <input type="text" Id="MMCart" class="form-control" placeholder="MM" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
                                 <span class="help-block text-muted small-font" >  Año de venc.</span>
-                                <input type="text" class="form-control" placeholder="YY" />
+                                <input type="text" Id="YYCart" class="form-control" placeholder="YY" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
                                 <span class="help-block text-muted small-font" >  CCV</span>
-                                <input type="text" class="form-control" placeholder="CCV" />
+                                <input type="text" Id="CCVCart" class="form-control" placeholder="CCV" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
                                 <img src="img/1.png" style=" width: 50%; padding: 0px;" class="img-rounded" />
@@ -296,7 +305,7 @@ function DatosPago(x){
                         </div>
                         <div class="row ">
                             <div class="col-md-12 pad-adjust">
-                                <input type="text" class="form-control" placeholder="Nombre en la Tarjeta" />
+                                <input type="text" Id="NameCart" class="form-control" placeholder="Nombre en la Tarjeta" />
                             </div>
                         </div>
                         <div class="row">
@@ -313,7 +322,7 @@ function DatosPago(x){
                                 <input type="submit"  class="btn btn-danger" value="Cancelar" />
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                                <input type="submit"  class="btn btn-warning btn-block" value="Registar" />
+                                <input type="button" onclick="PaymentCardSend()" class="btn btn-warning btn-block" value="Registar" />
                             </div>
                         </div>
                     </div>
@@ -322,6 +331,22 @@ function DatosPago(x){
             <!--Formulario tarjeta de credito fin-->
         </div>
         `));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetPaypal','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetPaypal',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                //console.log(respuesta);
+                $('#NumberCart').val(respuesta[0]['Number_tarjet']);
+                $('#MMCart').val(respuesta[0]['Mm']);
+                $('#YYCart').val(respuesta[0]['Yy']);
+                $('#NameCart').val(respuesta[0]['Name_tarjet']);
+                $('#CCVCart').val(respuesta[0]['Ccv']);
+            }
+        }); 
     }if (XX==2){
         //si es dos se realiza el metodo de pago cuenta con la empresa
         $('#contentPaymet-1').html($(``));
@@ -333,31 +358,28 @@ function DatosPago(x){
                         <div class="col-12 Transferencia-banner">
                             <p>Facturas Por Numero De Cuentas</p>
                         </div>
-                        <div class="col-4 TextTranfer Pad">
-                            <p>Empresa</p>
-                        </div>
-                        <div class="col-8 Pad">
-                            <input type="text" class="col-10" name="" id="BuscarEmpresa" onchange="BuscarEmpresa()" placeholder="Buscar Empresa">
-                        </div>
-                        <div class="col-4 TextTranfer">
-                        <p>Usuario</p> 
-                        </div>
-                        <div class="col-8">
-                            <input type="text" class="col-10" name="" id="" disabled placeholder="Edwin Quintero">
-                        </div>
                         <div class="col-4 TextTranfer">
                             <p>Numero de cuenta a facturar</p>
                         </div>
                         <div class="col-8">
-                            <input type="text" class="col-10" name="" id="cuenta" placeholder="ejem: 123456789">
-                        </div>
-                        <div class="col-12" style="text-align: center;padding-bottom: 12px;">
-                            <input type="button" class="btn" value="Enviar">
+                            <input type="text" class="col-10" name="" id="cuentaCarts" disabled Value="ejem: 123456789">
                         </div>
                     </div>
                 </div>
             </div>`
         ));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetBuyBank','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetBuyBank',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                //console.log(respuesta);
+                $('#cuentaCarts').val(respuesta[0]['Number_bank']);
+            }
+        });
     }if (XX==3){
         //si es tres se realiza el metodo de pago por tranferencia bancaria
         $('#contentPaymet-1').html($(``));
@@ -400,6 +422,80 @@ function DatosPago(x){
                 </div>
             </div>
         `));
+    };
+    if (XX==11){
+        methodPayment = 1;
+        //si es uno se realiza el metodo de pago Paypal
+        $('#payment-4-show').html($(``));
+        $('#payment-3-show').html($(``));
+        $('#contentPaymet-1').html($(`
+            <div class="payment-contentH col-xl-12 col-lg-12 col-md-8 col-sm-12" id="payment-1-show" style=" background-color: #F5F5F5; padding: 12px; border-radius: 11px; ">
+            <!--Formulario tarjeta de credito-->
+            <form action="#" class="credit-card-div">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <input type="text" id="NumberCart" class="form-control" disabled value="XXXX-XXXX-XXXX-XXXX" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--Formulario tarjeta de credito fin-->
+        </div>
+        `));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetPaypal','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetPaypal',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                NumberCarts = $('#NumberCart').val();
+                if(respuesta.length==0){
+                }else{
+                    $('#NumberCart').val(respuesta[0]['Number_tarjet']);
+                    //console.log($('#NumberCart').val());
+                    NumberCarts = $('#NumberCart').val();
+                }
+            }
+        });
+    }if (XX==22){
+        methodPayment = 2;
+        //si es dos se realiza el metodo de pago cuenta con la empresa
+        $('#contentPaymet-1').html($(``));
+        $('#payment-4-show').html($(``));
+        $('#payment-3-show').html($(`
+            <div class="container col-xl-12 Transferencia-Central">
+                <div class="row">
+                    <div class="row col-12 Transferencia-dou">
+                        <div class="col-8">
+                            <input type="text" class="col-10" name="" id="cuentaCarts" disabled Value="ejem: 123456789">
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        ));
+        var ID_USER = localStorage.getItem('IDUser');
+        Datas = {'Proceso': 'GetBuyBank','IdUser': ID_USER};
+        $.ajax({
+            url: '../ecommerce/ajax/php_intermediate.php?acción=GetBuyBank',
+            method:"POST",
+            data:Datas,
+            dataType: 'json',
+            success:function(respuesta){
+                cuentaCarts = $('#cuentaCarts').val();
+                //console.log(cuentaCarts);
+                if(respuesta.length==0){
+                }else{
+                    $('#cuentaCarts').val(respuesta[0]['Number_bank']);
+                    //console.log($('#cuentaCarts').val());
+                    cuentaCarts = $('#cuentaCarts').val();
+                }
+            }
+        });
     }
 }
 
@@ -430,3 +526,36 @@ loginX.addEventListener('change', e =>{
 
 
 
+function Passwordvalidet(X){
+    var x1 = document.getElementById('passwordI');
+    var x2 = document.getElementById('passwordII');
+    if(X==1){
+        //buttonPassword1
+        x1.type = "text";
+        x2.type = "text";
+        var intro = document.getElementById('buttonPassword1');
+        intro.style.display = "none";
+        var intro2 = document.getElementById('buttonPassword2');
+        intro2.style.display = "block";
+    };
+    if(X==2){
+        x1.type = "password";
+        x2.type = "password";
+        var intro = document.getElementById('buttonPassword2');
+        intro.style.display = "none";
+        var intro2 = document.getElementById('buttonPassword1');
+        intro2.style.display = "block";
+    };
+}
+function HabilitarPassword(){
+    var x1 = $('#passwordI').val();
+    var x2 = $('#passwordII').val();
+    if (x1==x2){
+        var intro = document.getElementById('SendNewUser');
+        intro.style.display = "block";
+    }else{
+        //SendNewUser
+        var intro = document.getElementById('SendNewUser');
+        intro.style.display = "none";
+    }
+}

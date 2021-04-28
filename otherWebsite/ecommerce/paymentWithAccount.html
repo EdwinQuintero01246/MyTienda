@@ -29,10 +29,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6" id="GeneUserArriba">
-                        <i class="fa fa-envelope"></i>
-                        mytiendat@developer.com 
-                        <i class="fa fa-user"></i>
-                        Edwin Quintero
+                        dsdasdasd
                     </div>
                     <div class="col-sm-6">
                         <i class="fa fa-phone-alt"></i>
@@ -125,82 +122,81 @@
         <!-- Breadcrumb Start -->
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
-                <ul class="breadcrumb" id="AddressStoreContents">
+                <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                     <li class="breadcrumb-item"><a href="my-Stores.html">Tiendas</a></li>
+                    <li class="breadcrumb-item active">Pago De Cuenta</li>
                 </ul>
             </div>
         </div>
-        <!-- Breadcrumb End -->
-        <!--Button direccionales-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 row" style="padding-right: 0px;">
-                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" margin-left: auto; padding-right: 0px;">
-                        <a class="btn" id="ProductUp" href="NewProduct.html" tabindex="-1"><i class="fa fa-upload"></i> Nuevo Producto</a>
+        
+        <!-- Producto Detalles Start -->
+        <div class="product-detail">
+            <div class="container-fluid">
+                <div class="row product-detail-top" >
+                    <div class="col-lg-9" style="padding-top: 20px; height: 400px; overflow: auto;">
+                        <div class="cart-page-inner" wfd-id="54">
+                            <h4 style=" font-family: 'Open Sans', sans-serif; text-align: end; color: #9144EA; margin-right: 40px; margin-top: 8px; font-weight: 600;">Usuarios con cuentas</h4>
+                            <div class="table-responsive" style="height: 800px; overflow: auto;" wfd-id="55">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Id Usuario</th>
+                                            <th>Nombre Usuario</th>
+                                            <th>Tipo Usuario</th>
+                                            <th>Pemiso</th>
+                                            <th>Numero Cuenta</th>
+                                            <th>Permiso</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="align-middle" id="ListUser">
+                                        <!--tr>
+                                            <td>10552</td>
+                                            <td>User1</td>
+                                            <td>Admin</td>
+                                            <td><input id="ValidetNotUser" type="button" class="btn" value="No"></td>
+                                            <td><input type="text" disabled></td>
+                                            <td><input type="button"  onclick="AutorizarCuenta()" class="button-user" value="Autorizar"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10553</td>
+                                            <td>User1</td>
+                                            <td>User</td>
+                                            <td><input id="ValidetYesUser" type="button" class="btn" value="Yes"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="button"  onclick="AutorizarCuenta()" class="button-user" value="Autorizar"></td>
+                                        </tr-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-price col-md-4 col-sm-6 col-lg-3 col-xl-3" style=" padding-right: 0px;">
-                        <a class="btn" id="ProductUp" href="stocktaking.html" tabindex="-1"><i class="fa fa-list"></i> Ver Nuestro Almacén</a>
+                    <div class="col-lg-3" style="padding-top: 20px;">
+                        <div class="row" style="padding-right: 15px;">
+                            <label for="" style="font-size: x-large; font-family: 'Open Sans', sans-serif; text-align: end; color: #9144EA; margin-right: 40px; margin-top: 8px; font-weight: 600;">Buscar un usuario</label>
+                            <input id="text-user" class="col-lg-9" type="text" placeholder="buscar usuario" >
+                            <input id="SeeUser"  class="col-lg-3 button-user" type="button" value="Buscar">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--Button direccionales fin-->
-        <!-- Producto Detalles Start -->
-        <div class="Stores">
-            <div >
-                <div >
-                    <!-- Inicio Tiendas -->
-                    <div class="container-fluid col-lg-12 sidebar" >
-                        <div class="row" style="background-color: white; margin: 12px 0px 0px 0px; padding-bottom: 20px;" id="StoresConteTiendaTitle">
-                        <!--Tittle tienda generado-->
-                        </div>
-                        <div class="sidebar-widget category row">
-                            <div class="row col-lg-8"style="margin-left: 0px;margin-right: 0px;">
-                                <div class="row" style="margin-right: 0px; margin-left: 0px;" id="StoresConteTiendaBuy">
-                                    <!--h2 class="col-12">Compras</h2>
-                                    <input class="col-lg-3 form-control" type="text" name="" id="" placeholder="Nombre Producto">
-                                    <input class="col-lg-3 form-control" type="text" name="" id="" placeholder="Fabricante">
-                                    <input class="col-lg-2 form-control" type="number" name="" id="" placeholder="Precio" disabled>
-                                    <input class="col-lg-2 form-control" type="number" name="" id="" placeholder="Cantidad">
-                                    <button class="col-lg-2 btn12">Generar Compra</button-->
-                                </div>
-                                <div style=" width: -webkit-fill-available; margin-top: 12px; height: 270px; overflow: auto;" id="DetailStoresConteTiendaBuy">
-                                    <!--table class="table table-bordered col-lg-12">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th>Nombre Productos</th>
-                                                <th>Fabricante</th>
-                                                <th>Cantidad existencia</th>
-                                                <th>Precio de venta</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="align-middle" id="ProductShoreHouseBUY">
-                                        </tbody>
-                                    </table-->
-                                </div>
-                                <div style=" width: -webkit-fill-available; margin-top: 12px; height: 270px; overflow: auto;" id="DetailStoresStoreHouse">
-                                    
-                                </div>
-                            </div>
-                            <div class="row col-lg-4" style=" padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; height: fit-content;" id="OrderProducerStoresCont">
-                                <h2 class="col-lg-12">Pedido Almacén</h2>
-                                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Nombre Producto">
-                                <input class="col-lg-6 form-control" type="text" name="" id="" placeholder="Fabricante">
-                                <input class="col-lg-3 form-control" type="number" name="" id="" placeholder="Cantidad">
-                                <button class="col-lg-9 btn12">Generar Pedido</button>
-                            </div>
-                        </div>
-                        <!--div class="sidebar-widget category row" style="height: 800px; overflow: auto;">
-                            <div></div>
-                        </div-->
-                    </div>
-                    <!-- Side Bar End -->
-                </div>
-            </div>
-        </div-->
         <!-- Producto Detalles End -->
         
+        <!-- Brand Start -->
+        <div class="brand">
+            <div class="container-fluid">
+                <div class="brand-slider">
+                    <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- Brand End -->
         
         <!-- Footer Start -->
         <div class="footer">
@@ -302,7 +298,6 @@
         
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/controlador.js"></script>
         <script src="js/Funcionabilidad.js"></script>
     </body>
 </html>
