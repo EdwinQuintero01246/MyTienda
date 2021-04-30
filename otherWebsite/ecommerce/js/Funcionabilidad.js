@@ -35,7 +35,7 @@ $(document).ready(function() {
     //LLenar todos los productos
     
     if (ID_USER == null && URLactual!= '/MyTienda%20Edwin/otherWebsite/Iniciar%20seccion/index.html'){
-        window.location.assign("../Iniciar seccion/index.html");
+        //window.location.assign("../Iniciar seccion/index.html");
     }
     if(URLactual=='/MyTienda%20Edwin/otherWebsite/ecommerce/product-list.html'){
         console.log("LLenado productos");
